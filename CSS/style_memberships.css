@@ -1,20 +1,32 @@
 /* Importar estilos básicos del login */
-@import url('style_login.css');
+@import url(//CSS/style_login.css);
+
+:root{
+    --uno: #121b28;
+    --dos: #1f2638;
+    --tres: #4a5873;
+    --cuatro: #7e8ba4;
+    --cinco: #e0e1dd;
+    --seis: white;
+}
 
 /* Contenedor principal */
 .container {
-    padding: 20px;
+    padding: 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1e3b68;  /* Fondo oscuro */
+    background-color: white;  /* Fondo oscuro */
 }
 
 /* Título principal */
 h2 {
-    color: #f0f3f5;  /* Texto claro */
+    color:var(--tres);  
     margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 300%
+
 }
 
 /* Estilo para las tarjetas de membresía */

@@ -1,0 +1,130 @@
+:root{
+    --uno: #121b28;
+    --dos: #1f2638;
+    --tres: #4a5873;
+    --cuatro: #7e8ba4;
+    --cinco: #e0e1dd;
+    --seis: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--uno);
+    padding: 10px 20px;
+    color: white;
+}
+
+.top-nav .left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    margin-right: 15px;
+}
+
+.location {
+    font-size: 14px;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 8px;
+    background-color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    color: #1b2b5a;
+}
+
+.top-nav .right {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav .right span {
+    margin-left: 20px;
+}
+
+.top-nav .right .account {
+    margin-right: 15px; 
+}
+
+/* Estilo para el botón de Login */
+.login-btn {
+    padding: 8px 15px;
+    background-color: white; /* Color amarillo */
+    color: #1b2b5a; /* Texto en azul oscuro */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--cuatro); /* Color de hover para el botón */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+/** NAV DE ABAJOOOOOOOOOOOOOOOOOOOOOOOOOOO **/
+
+.bottom-nav {
+    background-color: var(--tres);
+}
+
+.bottom-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.bottom-nav ul li {
+    margin: 0 15px;
+}
+
+.bottom-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.bottom-nav ul li a:hover {
+    color: var(--dos);
+}
