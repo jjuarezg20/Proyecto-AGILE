@@ -49,6 +49,21 @@ h2 {
     margin-bottom: 20px;
 }
 
+.card-image img {
+    width: 150px; /* Adjust this value to make the image smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Adds rounded corners to the image */
+}
+
+.card ul {
+    list-style-type: none; /* Removes default list bullet points */
+    padding-left: 0; /* Removes default left padding */
+}
+
+.card li {
+    margin-bottom: 5px; /* Adds some space between list items */
+}
+
 h3 {
     font-size: 1.2rem;
     color: #16243e;  /* Título oscuro */
