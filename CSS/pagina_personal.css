@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: azure;
+}
+
+.contenedor1{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.tipoMem{
+    background-color: rgb(56, 48, 200);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.contenedor1 .datos{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contendor1 .datos div{
+    text-align: left;
+}
+
+.datos div span{
+    display: block;
+    color: #6c757d;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.datos div p{
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.datos div p.expiracion{
+    color: #28a745;
+}
+
+.datos .renovar{
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.datos .renovar:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+.contenedor2{
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div .logo{
+    height: 20px;
+    width: 20px;
+
+}
+
+.contenedor3 {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.encabezado h2 {
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.contenido {
+    margin-bottom: 20px;
+}
+
+.contenido p {
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.radio .radio-punto {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.radio .radio-punto input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio .radio-punto:hover{
+    background-color: azure;
+}
+
+.nota p{
+    background-color: #e7f1ff;
+    padding: 10px;
+    border-radius: 4px;
+    color: #666;
+    justify-content: center;
+}
