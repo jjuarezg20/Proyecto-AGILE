@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=".//CSS/nav_bar.css">
+    <link rel="stylesheet" href=".//CSS/pagina_personal.css">
+</head>
+<body>
+    <header>
+            <!-- Top navigation bar -->
+            <div class="top-nav">
+                <div class="left">
+                    <img src="IMG/logo.jpg" alt="Logo" class="logo">
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for Products, brands and more...">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <div class="right">
+                    <span class="account"><i class="fa fa-user"></i> Account:</span>
+                    <button class="login-btn">Login</button>
+                </div>
+                
+            </div>
+    
+            <!-- Bottom navigation bar -->
+            <nav class="bottom-nav">
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Recent Purchases</a></li>
+                    <li><a href="#">Credit Card</a></li>
+     
+                </ul>
+            </nav>
+    </header>
+
+    <section>
+        <br>
+        <br>
+        <div class="contenedor1">
+            <div class="tipoMem">
+                Diamond
+            </div>
+            <div class="datos">
+                <div>
+                    <span>NOMBRE</span>
+                    <p>Karla Melissa Torres Solorzano</p>
+                </div>
+                <div>
+                    <span>NUMERO DE MEMBRESIA</span>
+                    <p>0000001-9</p>
+                </div>
+                <div>
+                    <span>FECHA DE EXPIRACION</span>
+                    <p class="expiracion">23/06/2026</p>
+                </div>
+                <div>
+                    <button class="renovar">RENOVAR</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="contenedor2">
+            <p>Esta membresía pertenece al miembro principal: <img class="logo" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
+        </div>
+        <div class="contenedor3">
+            <div class="encabezado">
+                <h2>Invoicing</h2>
+            </div>
+            <div class="contenido">
+                <p>All invoices for online purchases made from this membership will use the following information:</p>
+            </div>
+            <div class="radio">
+
+                <div class="radio-punto">
+                    <input type="radio" id="electronic-invoice" name="invoice" value="electronic-invoice">
+                    <label for="electronic-invoice">Electronic Invoice</label>
+                </div>
+                
+                <div class="radio-punto">
+                    <input type="radio" id="ticketElectronico" name="invoice" value="ticketElectronico" checked>
+                    <label for="ticketElectronico">Ticket Electronico</label>
+                </div>
+                
+                <div class="radio-punto">
+                    <input type="radio" id="creditoFiscal" name="invoice" value="creditoFiscal">
+                    <label for="creditoFiscal">Credito Fiscal</label>
+                </div>
+
+            </div>
+            <div class="nota">
+                <p>Tú ticket electrónico se emitirá anónimamente</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
