@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Member's Club Admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
+  
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <!-- <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Aprobacion Clientes</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Clientes</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Registro de Pagos</a>
+        </li>-->
+      </ul>
+  
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search
+        <li class="nav-item">
+          <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+            <i class="fas fa-search"></i>
+          </a>
+          <div class="navbar-search-block">
+            <form class="form-inline">
+              <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li> -->
+  
+        <!-- Messages Dropdown Menu 
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-comments"></i>
+            <span class="badge badge-danger navbar-badge">3</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start 
+              <div class="media">
+                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">Call me whenever you can...</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End 
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start 
+              <div class="media">
+                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">I got your message bro</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start 
+              <div class="media">
+                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">The subject goes here</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End 
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          </div>
+        </li> -->
+        <!-- Notifications Dropdown Menu 
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+  
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-link">
+        <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Member's Club</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open">
+              <a href="index.html" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+                        
+            <li class="nav-header">APROBACIÓN DE MEMBRESÍA</li>
+            <li class="nav-item">
+              <a href="aprobarCliente.html" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Aprobación Membresía
+                </p>
+              </a>
+            </li>
+                        
+            <li class="nav-header">CLIENTES</li>
+            <li class="nav-item">
+              <a href="cliente.html" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Clientes
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-header">PAGO DE MEMBRESÍA</li>
+            <li class="nav-item">
+              <a href="resgistroPago.html" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Registros de Pagos
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Clientes</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Clientes</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <!-- /.card -->
+  
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Base de Datos de Clientes</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                      <th>ID Usuario</th>
+                      <th>Nombre</th>
+                      <th>Apellido</th>
+                      <th>Tipo membresia</th>
+                      <th>Correo electronico</th>
+                      <th>Proxima fecha de pago</th>
+                      <th>Pago por mes o año</th>
+                      <th>Beneficiarios</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Jaime</td>
+                      <td>Lazo</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>lazoferman.jaime@gmail.com</td>
+                      <td>16/11/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Juan</td>
+                      <td>Juarez</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>juarez.juan@gmail.com</td>
+                      <td>18/10/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td> 
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Michelle</td>
+                      <td>Salazar</td>
+                      <td><span class="badge badge-warning">Platinum</span></td>
+                      <td>michelle.salazar@gmail.com</td>
+                      <td>18/11/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Karla</td>
+                      <td>Torres</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>torres.karla@gmail.com</td>
+                      <td>15/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Jose</td>
+                      <td>Tsai</td>
+                      <td><span class="badge badge-danger">Business Platinum</span></td>
+                      <td>tsai.jose@gmail.com</td>
+                      <td>21/12/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Julio</td>
+                      <td>Contreras</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>contreras.julio@gmail.com</td>
+                      <td>13/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Nahomi</td>
+                      <td>Serrano</td>
+                      <td><span class="badge badge-warning">Platinum</span></td>
+                      <td>serrano.nahomi@gmail.com</td>
+                      <td>12/12/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>Astrid</td>
+                      <td>Ayala</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>ayala.astrid@gmail.com</td>
+                      <td>10/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>Nataly</td>
+                      <td>Ponce</td>
+                      <td><span class="badge badge-danger">Business Platinum</span></td>
+                      <td>ponce.nataly@gmail.com</td>
+                      <td>10/12/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>Alisson</td>
+                      <td>Sura</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>sura.alisson@gmail.com</td>
+                      <td>5/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+                      <td>Alexis</td>
+                      <td>Ayala</td>
+                      <td><span class="badge badge-warning">Platinum</span></td>
+                      <td>ayala.alexis@gmail.com</td>
+                      <td>6/12/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>12</td>
+                      <td>Luciana</td>
+                      <td>Gómez</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>gomez.luciana@gmail.com</td>
+                      <td>7/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td>Javier</td>
+                      <td>Pérez</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>perez.javier@gmail.com</td>
+                      <td>8/11/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+                      <td>Raúl</td>
+                      <td>Torres</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>torres.raul@gmail.com</td>
+                      <td>10/11/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td>María</td>
+                      <td>López</td>
+                      <td><span class="badge badge-danger">Business Platinum</span></td>
+                      <td>lopez.maria@gmail.com</td>
+                      <td>9/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td>Carmen</td>
+                      <td>Ortiz</td>
+                      <td><span class="badge badge-warning">Platinum</span></td>
+                      <td>ortiz.carmen@gmail.com</td>
+                      <td>11/11/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td>Felipe</td>
+                      <td>Ruiz</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>ruiz.felipe@gmail.com</td>
+                      <td>18/12/2024</td>
+                      <td>Pago por año</td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td>Sofía</td>
+                      <td>Ramírez</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>ramirez.sofia@gmail.com</td>
+                      <td>19/10/2024</td>
+                      <td>Pago por mes</td>
+                      <td>No</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <strong>Copyright 2024 <a href="index.html">Member's Club Admin</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0.0
+      </div>
+    </footer>
+  </div>
+  <!-- ./wrapper -->
+  
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="plugins/jszip/jszip.min.js"></script>
+  <script src="plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="plugins/raphael/raphael.min.js"></script>
+  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  
+  <!-- AdminLTE for demo purposes 
+  <script src="dist/js/demo.js"></script>-->
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard2.js"></script> 
+
+  <!-- Page specific script -->
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
+
+</body>
+</html>
