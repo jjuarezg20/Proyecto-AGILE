@@ -4,7 +4,7 @@
 }
 
 html{
-    background-color: azure;
+    background-color: #f0f3f5;
 }
 
 .contenedor1{
@@ -135,4 +135,12 @@ div .logo{
     border-radius: 4px;
     color: #666;
     justify-content: center;
+}
+
+.footer {
+    background-color: #1e3b68;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
 }
