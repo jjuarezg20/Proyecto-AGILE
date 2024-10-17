@@ -1,40 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
+    <title>Tienda - Shop</title>
+    <link rel="stylesheet" href="CSS/shop.css">
     <link rel="stylesheet" href="CSS/nav_bar.css">
-    <link rel="stylesheet" href="CSS/tienda.css">
 </head>
 <body>
-    header>
+    <header>
         <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
                 <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for Products, brands and more...">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="right">
-                <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <button class="login-btn">Login</button>
+                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
+                <button class="login-btn">Iniciar sesión</button>
             </div>
-            
         </div>
 
         <!-- Bottom navigation bar -->
         <nav class="bottom-nav">
             <ul>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Membership</a></li>
-                <li><a href="#">Recent Purchases</a></li>
-                <li><a href="#">Credit Card</a></li>
- 
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Membresía</a></li>
+                <li><a href="#">Compras Recientes</a></li>
+                <li><a href="#">Tarjeta de Crédito</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <!-- Banner principal -->
+        <section class="banner">
+            <div class="banner-content">
+                <h1>¡Preparate para la Navidad!</h1>
+                <p>Encuentra los mejores accesorios navideños para decorar tu hogar</p>
+                <button>Ver Más</button>
+            </div>
+            <div class="banner-image"> 
+                <img src="IMG/banerNavideño.png" alt="Accesorios Navideños">
+            </div>
+        </section>
+
+        <!-- Sección de categorías destacadas -->
+        <section class="categories">
+            <h2>Categorías Destacadas</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <img src="IMG/Alimentos.png" alt="Alimentos">
+                    <p>Alimentos</p>
+                </div>
+                <div class="category-item">
+                    <img src="IMG/hogar.png" alt="Hogar">
+                    <p>Hogar</p>
+                </div>
+                <div class="category-item">
+                    <img src="IMG/licor.png" alt="Licor, Cerveza y Vino">
+                    <p>Licor, Cerveza y Vino</p>
+                </div>
+                <div class="category-item">
+                    <img src="IMG/Salud Belleza.png" alt="Salud y Belleza">
+                    <p>Salud y Belleza</p>
+                </div>
+                <div class="category-item">
+                    <img src="IMG/bebe.png" alt="Bebé">
+                    <p>Bebé</p>
+                </div>
+                <div class="category-item">
+                    <img src="IMG/mascotas.png" alt="Mascotas">
+                    <p>Mascotas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de productos -->
+        <section class="products">
+            <h2>Productos Destacados</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="IMG/Bocionajbl.png" alt="Producto 1">
+                    <p>JBL
+                        Bocina JBL Charge 5 40Watts
+                    </p>
+                    <p class="price">$49.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                <div class="product-item">
+                    <img src="IMG/SecadoraDyson.png" alt="Producto 2">
+                    <p>Secadora de cabello Dyson SuperSonic gold/blue</p>
+                    <p class="price">$625.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                <div class="product-item">
+                    <img src="IMG/Ps5.png" alt="Producto 3">
+                    <p>PlayStation®5 console</p>
+                    <p class="price">$444.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
