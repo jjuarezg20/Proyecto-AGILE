@@ -240,12 +240,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Clientes</h1>
+              <h1 class="m-0">Aprobar Clientes</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Clientes</li>
+                <li class="breadcrumb-item active">Aprobar Cliente</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -262,7 +262,7 @@
   
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Base de Datos de Clientes</h3>
+                  <h3 class="card-title">Base de Datos de Clientes por Aprobar</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -272,196 +272,326 @@
                       <th>ID Usuario</th>
                       <th>Nombre</th>
                       <th>Apellido</th>
-                      <th>Tipo membresia</th>
+                      <th>Membresia por Adquirir</th>
                       <th>Correo electronico</th>
-                      <th>Proxima fecha de pago</th>
-                      <th>Pago por mes o año</th>
+                      <th>Pagara cada</th>
                       <th>Beneficiarios</th>
+                      <th>Acciones</th>
+                      <th>Estatus</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Jaime</td>
-                      <td>Lazo</td>
+                      <td>Gerson</td>
+                      <td>Hernandez</td>
                       <td><span class="badge badge-success">Diamond</span></td>
-                      <td>lazoferman.jaime@gmail.com</td>
-                      <td>16/11/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
+                      <td>ghernandez@gmail.com</td>
+                      <td>Mes</td>
+                      <td>No</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-warning">En Revision...</span></td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>Juan</td>
-                      <td>Juarez</td>
-                      <td><span class="badge badge-success">Diamond</span></td>
-                      <td>juarez.juan@gmail.com</td>
-                      <td>18/10/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td> 
+                      <td>Gerardo</td>
+                      <td>Argueta</td>
+                      <td><span class="badge badge-warning">Platinum</span></td>
+                      <td>gargueta@gmail.com</td>
+                      <td>Año</td>
+                      <td>Si</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>Michelle</td>
-                      <td>Salazar</td>
-                      <td><span class="badge badge-warning">Platinum</span></td>
-                      <td>michelle.salazar@gmail.com</td>
-                      <td>18/11/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
+                      <td>Viviana</td>
+                      <td>Lemus</td>
+                      <td><span class="badge badge-info">Business</span></td>
+                      <td>vlemus@gmail.com</td>
+                      <td>Mes</td>
+                      <td>No</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-warning">En Revision...</span></td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>Karla</td>
-                      <td>Torres</td>
+                      <td>Carolina</td>
+                      <td>Garcia</td>
                       <td><span class="badge badge-info">Business</span></td>
-                      <td>torres.karla@gmail.com</td>
-                      <td>15/11/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
+                      <td>cgarcia@gmail.com</td>
+                      <td>Año</td>
+                      <td>Si</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     <tr>
                       <td>5</td>
-                      <td>Jose</td>
-                      <td>Tsai</td>
-                      <td><span class="badge badge-danger">Business Platinum</span></td>
-                      <td>tsai.jose@gmail.com</td>
-                      <td>21/12/2024</td>
-                      <td>Pago por año</td>
+                      <td>Ariana</td>
+                      <td>Argueta</td>
+                      <td><span class="badge badge-success">Diamond</span></td>
+                      <td>aargueta@gmail.com</td>
+                      <td>Año</td>
                       <td>Si</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     <tr>
                       <td>6</td>
-                      <td>Julio</td>
-                      <td>Contreras</td>
-                      <td><span class="badge badge-success">Diamond</span></td>
-                      <td>contreras.julio@gmail.com</td>
-                      <td>13/11/2024</td>
-                      <td>Pago por mes</td>
+                      <td>Carolina</td>
+                      <td>Lemus</td>
+                      <td><span class="badge badge-danger">Business Platinum</span></td>
+                      <td>clemus@gmail.com</td>
+                      <td>Mes</td>
                       <td>No</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     <tr>
                       <td>7</td>
-                      <td>Nahomi</td>
-                      <td>Serrano</td>
+                      <td>Ruben</td>
+                      <td>Hueso</td>
                       <td><span class="badge badge-warning">Platinum</span></td>
-                      <td>serrano.nahomi@gmail.com</td>
-                      <td>12/12/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
+                      <td>rhueso@gmail.com</td>
+                      <td>Mes</td>
+                      <td>No</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     <tr>
                       <td>8</td>
-                      <td>Astrid</td>
-                      <td>Ayala</td>
+                      <td>Ester</td>
+                      <td>Chavez</td>
                       <td><span class="badge badge-info">Business</span></td>
-                      <td>ayala.astrid@gmail.com</td>
-                      <td>10/11/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
+                      <td>echavez@gmail.com</td>
+                      <td>Año</td>
+                      <td>Si</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-warning">En Revision...</span></td>
                     </tr>
                     <tr>
                       <td>9</td>
-                      <td>Nataly</td>
-                      <td>Ponce</td>
-                      <td><span class="badge badge-danger">Business Platinum</span></td>
-                      <td>ponce.nataly@gmail.com</td>
-                      <td>10/12/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td>10</td>
-                      <td>Alisson</td>
-                      <td>Sura</td>
-                      <td><span class="badge badge-success">Diamond</span></td>
-                      <td>sura.alisson@gmail.com</td>
-                      <td>5/11/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
-                    </tr>
-                    <tr>
-                      <td>11</td>
-                      <td>Alexis</td>
-                      <td>Ayala</td>
-                      <td><span class="badge badge-warning">Platinum</span></td>
-                      <td>ayala.alexis@gmail.com</td>
-                      <td>6/12/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td>12</td>
-                      <td>Luciana</td>
-                      <td>Gómez</td>
+                      <td>Gerson</td>
+                      <td>Cubias</td>
                       <td><span class="badge badge-info">Business</span></td>
-                      <td>gomez.luciana@gmail.com</td>
-                      <td>7/11/2024</td>
-                      <td>Pago por mes</td>
+                      <td>gcubias@gmail.com</td>
+                      <td>Mes</td>
                       <td>No</td>
-                    </tr>
-                    <tr>
-                      <td>13</td>
-                      <td>Javier</td>
-                      <td>Pérez</td>
-                      <td><span class="badge badge-info">Business</span></td>
-                      <td>perez.javier@gmail.com</td>
-                      <td>8/11/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td>14</td>
-                      <td>Raúl</td>
-                      <td>Torres</td>
-                      <td><span class="badge badge-success">Diamond</span></td>
-                      <td>torres.raul@gmail.com</td>
-                      <td>10/11/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td>15</td>
-                      <td>María</td>
-                      <td>López</td>
-                      <td><span class="badge badge-danger">Business Platinum</span></td>
-                      <td>lopez.maria@gmail.com</td>
-                      <td>9/11/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
-                    </tr>
-                    <tr>
-                      <td>16</td>
-                      <td>Carmen</td>
-                      <td>Ortiz</td>
-                      <td><span class="badge badge-warning">Platinum</span></td>
-                      <td>ortiz.carmen@gmail.com</td>
-                      <td>11/11/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
-                    </tr>
-                    <tr>
-                      <td>17</td>
-                      <td>Felipe</td>
-                      <td>Ruiz</td>
-                      <td><span class="badge badge-info">Business</span></td>
-                      <td>ruiz.felipe@gmail.com</td>
-                      <td>18/12/2024</td>
-                      <td>Pago por año</td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td>18</td>
-                      <td>Sofía</td>
-                      <td>Ramírez</td>
-                      <td><span class="badge badge-info">Business</span></td>
-                      <td>ramirez.sofia@gmail.com</td>
-                      <td>19/10/2024</td>
-                      <td>Pago por mes</td>
-                      <td>No</td>
+                      <td class="project-actions text-right">
+                        <div class="btn-group">
+                          <a class="btn btn-primary btn-xs" href="#">
+                            <i class="fas fa-solid fa-eye">
+                            </i>
+                            Ver
+                          </a>
+                          <a class="btn btn-info btn-xs" data-toggle="modal" data-target="#modal-info">
+                            <i class="fas fa-solid fa-check">
+                            </i>
+                            Aprobar
+                          </a>
+                          <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal-danger">
+                              <i class="fas fa-solid fa-ban">
+                              </i>
+                              Negar
+                          </a>
+                        </div>                    
+                      </td>
+                      <td><span class="badge badge-info">Pendiente...</span></td>
                     </tr>
                     </tbody>
                   </table>
+
+                  <div class="modal fade" id="modal-info">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-info">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Aprobar Membresia</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>¿Quieres aprobar esta membresia?</p>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Aprobar</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+            
+                  <div class="modal fade" id="modal-danger">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-danger">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Negar Membresia</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>¿Quieres negar esta membresia?</p>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Negar</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+            
+                  
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -541,7 +671,7 @@
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       $('#example2').DataTable({
         "paging": true,
-        "lengthChange": false,
+        "lengthChange": true,
         "searching": false,
         "ordering": true,
         "info": true,

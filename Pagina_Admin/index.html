@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin_Gestion_Membresias</title>
+  <title>Member's Club Admin</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,7 @@
   <div class="wrapper">
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+      <img class="animation__wobble" src="dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
     </div>
   
 
@@ -172,8 +172,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Gestion de Membresia</span>
+        <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Member's Club</span>
       </a>
 
       <!-- Sidebar -->
@@ -195,7 +195,7 @@
                         
             <li class="nav-header">APROBACIÓN DE MEMBRESÍA</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="aprobarCliente.html" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
                   Aprobación Membresía
@@ -215,7 +215,7 @@
 
             <li class="nav-header">PAGO DE MEMBRESÍA</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="resgistroPago.html" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
                   Registros de Pagos
@@ -326,7 +326,7 @@
                       <div class="description-block border-right">
                         <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
                         <h5 class="description-header">35,210</h5>
-                        <span class="description-text">MEMBRESIA 1</span>
+                        <span class="description-text">MEMBERSHIP DIAMOND</span>
                       </div>
                       <!-- /.description-block -->
                     </div>
@@ -335,16 +335,16 @@
                       <div class="description-block border-right">
                         <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
                         <h5 class="description-header">10,390</h5>
-                        <span class="description-text">MEMBRESIA 2</span>
+                        <span class="description-text">MEMBERSHIP PLATINUM</span>
                       </div>
                       <!-- /.description-block -->
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-3 col-6">
                       <div class="description-block border-right">
-                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
+                        <span class="description-percentage text-info"><i class="fas fa-caret-up"></i> 20%</span>
                         <h5 class="description-header">24,813</h5>
-                        <span class="description-text">MEMBRESIA 3</span>
+                        <span class="description-text">MEMBERSHIP BUSINESS</span>
                       </div>
                       <!-- /.description-block -->
                     </div>
@@ -353,7 +353,7 @@
                       <div class="description-block">
                         <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
                         <h5 class="description-header">1200</h5>
-                        <span class="description-text">MEMBRESIA 4</span>
+                        <span class="description-text">MEMBERSHIP BUSINESS PLATINUM</span>
                       </div>
                       <!-- /.description-block -->
                     </div>
@@ -376,7 +376,7 @@
               <!-- TABLE: LATEST ORDERS -->
               <div class="card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">Latest Orders</h3>
+                  <h3 class="card-title">Clientes</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -393,59 +393,59 @@
                     <table class="table m-0">
                       <thead>
                       <tr>
-                        <th>Order ID</th>
-                        <th>Item</th>
-                        <th>Status</th>
-                        <th>Popularity</th>
+                        <th>ID Usuario</th>
+                        <th>Cliente</th>
+                        <th>Membresia</th>
+                        <th>Proxima fecha de pago</th>
                       </tr>
                       </thead>
                       <tbody>
                       <tr>
-                        <td><a href="#">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="badge badge-success">Shipped</span></td>
+                        <td><a href="cliente.html">1</a></td>
+                        <td>Jaime Lazo</td>
+                        <td><span class="badge badge-success">Diamond</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                          <div class="sparkbar" data-color="#00a65a" data-height="20">16/11/2024</div>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
+                        <td><a href="cliente.html">2</a></td>
+                        <td>Juan Juarez</td>
+                        <td><span class="badge badge-success">Diamond</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                          <div class="sparkbar" data-color="#f39c12" data-height="20">18/10/2024</div>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="badge badge-danger">Delivered</span></td>
+                        <td><a href="cliente.html">3</a></td>
+                        <td>Michelle Salazar</td>
+                        <td><span class="badge badge-warning">Platinum</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                          <div class="sparkbar" data-color="#f56954" data-height="20">18/11/2024</div>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">OR7429</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-info">Processing</span></td>
+                        <td><a href="cliente.html">4</a></td>
+                        <td>Karla Torres</td>
+                        <td><span class="badge badge-info">Business</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                          <div class="sparkbar" data-color="#00c0ef" data-height="20">15/11/2024</div>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
+                        <td><a href="cliente.html">5</a></td>
+                        <td>Jose Tsai</td>
+                        <td><span class="badge badge-danger">Business Platinum</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                          <div class="sparkbar" data-color="#f39c12" data-height="20">21/12/20248</div>
                         </td>
                       </tr>
                       <tr>
-                        <td><a href="#">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="badge badge-warning">Pending</span></td>
+                        <td><a href="cliente.html">6</a></td>
+                        <td>Julio Contreras</td>
+                        <td><span class="badge badge-success">Diamond</span></td>
                         <td>
-                          <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                          <div class="sparkbar" data-color="#f39c12" data-height="20">13/11/2024</div>
                         </td>
                       </tr>
                       </tbody>
@@ -462,7 +462,7 @@
               <!-- PRODUCT LIST -->
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Recently Added Products</h3>
+                  <h3 class="card-title">Clientes por Aprobar</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -478,67 +478,67 @@
                   <ul class="products-list product-list-in-card pl-2 pr-2">
                     <li class="item">
                       <div class="product-img">
-                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                        <img src="dist/img/diamond.png" alt="Product Image" class="img-size-50">
                       </div>
                       <div class="product-info">
-                        <a href="javascript:void(0)" class="product-title">Samsung TV
-                          <span class="badge badge-warning float-right">$1800</span></a>
+                        <a href="aprobarCliente.html" class="product-title">Gerson Hernandez
+                          <span class="badge badge-warning float-right">Revision</span></a>
                         <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
+                          Membresia Diamond
                         </span>
                       </div>
                     </li>
                     <!-- /.item -->
                     <li class="item">
                       <div class="product-img">
-                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                        <img src="dist/img/platinum.png" alt="Product Image" class="img-size-50">
                       </div>
                       <div class="product-info">
-                        <a href="javascript:void(0)" class="product-title">Bicycle
-                          <span class="badge badge-info float-right">$700</span></a>
+                        <a href="aprobarCliente.html" class="product-title">Gerardo Argueta
+                          <span class="badge badge-info float-right">Pendiente...</span></a>
                         <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                          Membresia Platinum
                         </span>
                       </div>
                     </li>
                     <!-- /.item -->
                     <li class="item">
                       <div class="product-img">
-                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                        <img src="dist/img/business.png" alt="Product Image" class="img-size-50">
                       </div>
                       <div class="product-info">
-                        <a href="javascript:void(0)" class="product-title">
-                          Xbox One <span class="badge badge-danger float-right">
-                          $350
+                        <a href="aprobarCliente.html" class="product-title">
+                          Viviana Lemus<span class="badge badge-warning float-right">
+                          Revision
                         </span>
                         </a>
                         <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
+                          Membresia Business
                         </span>
                       </div>
                     </li>
                     <!-- /.item -->
                     <li class="item">
                       <div class="product-img">
-                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                        <img src="dist/img/business.png" alt="Product Image" class="img-size-50">
                       </div>
                       <div class="product-info">
-                        <a href="javascript:void(0)" class="product-title">PlayStation 4
-                          <span class="badge badge-success float-right">$399</span></a>
+                        <a href="aprobarCliente.html" class="product-title">Carolina Garcia
+                          <span class="badge badge-info float-right">Pendiente...</span></a>
                         <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
+                          Membresia Business
                         </span>
                       </div>
                     </li>
                     <li class="item">
                       <div class="product-img">
-                        <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                        <img src="dist/img/diamond.png" alt="Product Image" class="img-size-50">
                       </div>
                       <div class="product-info">
-                        <a href="javascript:void(0)" class="product-title">PlayStation 4
-                          <span class="badge badge-success float-right">$399</span></a>
+                        <a href="aprobarCliente.html" class="product-title">Ariana Argueta
+                          <span class="badge badge-info float-right">Pendiente...</span></a>
                         <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
+                          Mmebresia Diamond
                         </span>
                       </div>
                     </li>
@@ -551,14 +551,6 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
-
-
-
-
-
-
-
-
         </div>
       </section>
       <!-- /.content -->
@@ -574,7 +566,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright 2024 <a href="#">Gestion de Membresía</a>.</strong>
+      <strong>Copyright 2024 <a href="index.html">Member's Club Admin</a>.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 1.0.0
