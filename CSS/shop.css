@@ -52,13 +52,11 @@
 }
 
 
-
-
 :root {
     --primary-color: #1e3b68;
     --secondary-color: #f0f3f5;
     --text-color: #16243e;
-    --button-color: #f94343;
+    --button-color: #4a5873;
     --background-color: white;
 }
 
