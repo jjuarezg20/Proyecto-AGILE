@@ -1,0 +1,194 @@
+/* Estilos generales */
+.membership-section {
+    background-color: var(--cinco); /* Fondo claro */
+    display: flex;
+    padding: 20px;
+    justify-content: space-between; /* Aligns children to the left and right */
+}
+
+
+:root {
+    --uno: #121b28;
+    --dos: #1f2638;
+    --tres: #4a5873;
+    --cuatro: #7e8ba4;
+    --cinco: #e0e1dd;
+    --seis: white;
+}
+
+.membership-info {
+    flex: 1; /* Allows the membership info to take up available space */
+    max-width: 300px; /* Optional: Limit the width of the membership info */
+    text-align: left; /* Align text to the left */
+    padding: 1.5rem;
+}
+
+.membership-info h2 {
+    font-size: 2.5em;
+    color: var(--dos); /* Color del título */
+    margin-bottom: 10px;
+}
+
+.membership-info p {
+    font-size: 1.2em;
+    color: #555; /* Color del texto */
+    margin-bottom: 20px;
+}
+
+.membership-btn {
+    background-color: var(--dos); /* Azul oscuro */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-btn:hover {
+    background-color: #0a1b3a; /* Azul más oscuro para hover */
+}
+
+.membership-benefits {
+    display: flex;
+    flex: 2; /* Allows the benefits to take up more space */
+    justify-content: space-around; /* Distributes benefits evenly */
+}
+
+.benefit {
+    text-align: center;
+    flex: 1; /* Each benefit takes equal space */
+}
+
+.benefit img {
+    width: 100%; /* Makes the images responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+#garantia{
+    width: 90%;
+    height: auto;
+}
+
+.benefit h3 {
+    font-size: 1.5em;
+    color: #1b2b5a; /* Color de los títulos */
+}
+
+/* Estilos generales para la sección de productos */
+.products-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.products-section h2 {
+    color: #1b2b5a; /* Color del título */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    width: 30%;
+    position: relative;
+}
+
+.product-card img {
+  /* Establece un ancho fijo para todas las imágenes */
+  width: 300px; /* Ajusta según tus necesidades */
+  
+  /* Establece una altura fija para todas las imágenes */
+  height: 200px; /* Ajusta según tus necesidades */
+  
+  /* Asegura que las imágenes se ajusten correctamente dentro de los contenedores */
+  object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+  
+  /* Espaciado inferior */
+  margin-bottom: 1.25rem; /* Espaciado con unidad relativa */
+}
+.product-card h3 {
+    font-size: 1.5em;
+    color: #1b2b5a;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #555;
+    font-size: 1em;
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1b2b5a;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-message {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cuatro);
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.view-more:hover + .hover-message {
+    display: block;
+}
+
+.members-savings-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.members-savings-section h2 {
+    padding-top: 30px;
+    color: #1b2b5a; /* Color del título */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.savings-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.savings-card {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.savings-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.savings-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
