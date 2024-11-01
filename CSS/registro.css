@@ -1,0 +1,158 @@
+.registration-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.back-button {
+    background-color: #e6e6e6;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+
+.membership-form p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.membership-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.membership-form a:hover {
+    text-decoration: underline;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input .flag-icon {
+    margin-right: 8px;
+}
+
+button[type="submit"] {
+    background-color: #051628;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.payment-method-section {
+
+
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.payment-method-section h3 {
+    color: #333;
+    font-weight: bold;
+}
+
+.add-card-button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.card-form .form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.card-form label {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.allowed-cards {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-icon {
+    width: 30px;
+    height: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.save-button {
+    background-color: #d0d4db;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #ccc;
+}
