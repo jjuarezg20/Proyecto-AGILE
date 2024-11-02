@@ -1,10 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 html{
-    background-color: azure;
+    background-color: #f0f3f5;
 }
 
 .contenedor1{
@@ -75,10 +70,9 @@ html{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-div .logo{
+div .user{
     height: 20px;
     width: 20px;
-
 }
 
 .contenedor3 {
@@ -135,4 +129,12 @@ div .logo{
     border-radius: 4px;
     color: #666;
     justify-content: center;
+}
+
+.footer {
+    background-color: #1e3b68;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
 }

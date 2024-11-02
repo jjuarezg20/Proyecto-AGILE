@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página personal</title>
     <link rel="stylesheet" href=".//CSS/nav_bar.css">
     <link rel="stylesheet" href=".//CSS/pagina_personal.css">
 </head>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="right">
                     <span class="account"><i class="fa fa-user"></i> Account:</span>
-                    <button class="login-btn">Login</button>
+                    <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
                 </div>
                 
             </div>
@@ -28,8 +28,8 @@
             <!-- Bottom navigation bar -->
             <nav class="bottom-nav">
                 <ul>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Membership</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="Buy_Membership.html">Membership</a></li>
                     <li><a href="#">Recent Purchases</a></li>
                     <li><a href="#">Credit Card</a></li>
 
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="contenedor2">
-            <p>Esta membresía pertenece al miembro principal: <img class="logo" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
+            <p>Esta membresía pertenece al miembro principal: <img class="user" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
         </div>
         <div class="contenedor3">
             <div class="encabezado">
@@ -97,5 +97,9 @@
         </div>
 
     </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

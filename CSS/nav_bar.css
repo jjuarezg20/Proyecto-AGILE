@@ -128,3 +128,11 @@ header {
 .bottom-nav ul li a:hover {
     color: var(--dos);
 }
+
+.footer {
+    background-color: #1e3b68;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
