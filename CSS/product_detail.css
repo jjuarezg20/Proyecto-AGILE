@@ -5,6 +5,7 @@
     --button-color: #ff5733;
     --background-color: #ffffff;
     --highlight-color: #ff4500;
+    --price-color: #e60023;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 
 header {
     background-color: var(--primary-color);
+    color: white;
 }
 
 .top-nav {
@@ -22,7 +24,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    color: white;
 }
 
 .logo {
@@ -51,24 +52,24 @@ header {
 }
 
 .product-details {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
     background-color: var(--background-color);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-info {
     display: flex;
     gap: 20px;
+    align-items: flex-start;
 }
 
 .product-image {
     width: 300px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-description {
@@ -76,32 +77,44 @@ header {
 }
 
 .product-description h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 2rem;
     color: var(--primary-color);
 }
 
+.item-number, .description-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
 .membership-prices h3 {
-    margin-top: 20px;
     font-size: 1.2rem;
     color: var(--primary-color);
+    margin-top: 20px;
 }
 
 .membership-prices ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 10px;
+}
+
+.membership-prices ul li {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 5px 0;
 }
 
 .membership-prices .price {
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--price-color);
 }
 
-.purchase-options {
-    margin-top: 20px;
+.quantity-section {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .quantity-input {
@@ -112,17 +125,19 @@ header {
     border-radius: 5px;
 }
 
-.btn-proceed {
+.btn-make-purchase {
     background-color: var(--button-color);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.btn-proceed:hover {
+.btn-make-purchase:hover {
     background-color: var(--highlight-color);
 }
 
@@ -145,8 +160,28 @@ header {
         width: 200px;
     }
 
-    .btn-proceed {
+    .btn-make-purchase {
         width: 100%;
         text-align: center;
     }
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: var(--primary-color); 
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px; 
+}
+
+.btn-back:hover {
+    background-color: #163258; 
+    transform: scale(1.05); 
 }
