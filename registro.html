@@ -64,12 +64,12 @@
                 </div>
                 <div class="form-group">
                     <label for="club">* Preferred Membership</label>
+                    <!-- En registro.html -->
                     <select id="club">
-                        <option value="D">Diamond</option>
-                        <option value="P">Platinum</option>
-                        <option value="B">Business</option>
-                        <option value="BP">Business Platinum</option>
-                        <!-- Add more club options here -->
+                        <option value="Diamond">Diamond</option>
+                        <option value="Platinum">Platinum</option>
+                        <option value="Business">Business</option>
+                        <option value="Business Platinum">Business Platinum</option>
                     </select>
                 </div>
             </div>
@@ -92,13 +92,13 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="idNumber">* Government ID Number</label>
-                    <input type="text" id="idNumber" required>
+                    <input type="text" id="idNumber" required maxlength="9">
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">* Phone Number</label>
                     <div class="phone-input">
                         <span class="flag-icon">🇸🇻</span>
-                        <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+                        <input type="text" id="phoneNumber" placeholder="Phone Number" required maxlength="8">
                     </div>
                 </div>
             </div>
@@ -149,7 +149,8 @@
             apellido: document.getElementById('lastName').value,
             email: document.getElementById('email').value,
             telefono: document.getElementById('phoneNumber').value,
-            id: document.getElementById('idNumber').value
+            id: document.getElementById('idNumber').value,
+            membresia: document.getElementById('club').value // Añadimos la membresía
         };
         
         // Guardar todos los datos en localStorage

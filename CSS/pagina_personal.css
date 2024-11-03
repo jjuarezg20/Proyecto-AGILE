@@ -22,6 +22,7 @@ html{
     border-top-right-radius: 8px;
 }
 
+
 .datos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -41,7 +41,7 @@
         <br>
         <br>
         <div class="contenedor1">
-            <div class="tipoMem">
+            <div class="tipoMem" id="tipoMembresiaMostrada">
                 Diamond
             </div>
             <div class="datos">
@@ -129,6 +129,7 @@
             document.getElementById('idMostrado').textContent = userData.id;
             document.getElementById('telMostrado').textContent = userData.telefono;
             // ... actualizar otros campos ...
+            document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
         }
     });
 </script>
