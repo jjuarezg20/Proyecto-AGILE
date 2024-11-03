@@ -38,12 +38,12 @@
     </header>
 
     <section class="registration-section">
-        <button class="back-button">Back</button>
+        <button class="back-button" onclick="window.location.href='Buy_Membership.html'">Back</button>
         <h2>Set up your New Membership</h2>
         <p>Please fill out the main member's information to start enjoying our exclusive club benefits.</p>
         <p>If you had a Membership before, you can <a href="#">renew your membership here</a></p>
     
-        <form class="membership-form">
+        <form class="membership-form" id="registrationForm">
             <h3>Membership Information</h3>
             
             <div class="form-row">
@@ -63,9 +63,12 @@
                     <input type="text" id="country" value="El Salvador" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="club">* Preferred Club</label>
+                    <label for="club">* Preferred Membership</label>
                     <select id="club">
-                        <option value="6701">6701 - Santa Elena</option>
+                        <option value="D">Diamond</option>
+                        <option value="P">Platinum</option>
+                        <option value="B">Business</option>
+                        <option value="BP">Business Platinum</option>
                         <!-- Add more club options here -->
                     </select>
                 </div>
@@ -76,20 +79,13 @@
                     <label for="email">* Email</label>
                     <input type="email" id="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="confirmEmail">* Confirm Email</label>
-                    <input type="email" id="confirmEmail" required>
-                </div>
+
             </div>
     
             <div class="form-row">
                 <div class="form-group">
                     <label for="password">* Create Password</label>
                     <input type="password" id="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirmPassword">* Confirm Password</label>
-                    <input type="password" id="confirmPassword" required>
                 </div>
             </div>
     
@@ -107,7 +103,7 @@
                 </div>
             </div>
     
-            <button type="submit">Submit</button>
+            <button type="submit" id="submitBtn">Submit</button>
         </form>
     </section>
     
@@ -141,10 +137,29 @@
             <button type="submit" class="save-button">Save</button>
         </form>
     </section>
-    
 
-   
-    
+    <script>
+    // En registro.html
+    document.getElementById('submitBtn').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        
+        // Obtener todos los valores
+        const userData = {
+            nombre: document.getElementById('firstName').value,
+            apellido: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            telefono: document.getElementById('phoneNumber').value,
+            id: document.getElementById('idNumber').value
+        };
+        
+        // Guardar todos los datos en localStorage
+        localStorage.setItem('userData', JSON.stringify(userData));
+        
+        alert('Usuario creado exitosamente');
+        window.location.href = 'paginaPersonal.html';
+
+        });
+        </script>
 
 </body>
 

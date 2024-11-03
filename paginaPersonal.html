@@ -47,11 +47,27 @@
             <div class="datos">
                 <div>
                     <span>NOMBRE</span>
-                    <p>Karla Melissa Torres Solorzano</p>
+                    <p id="nombreMostrado"></p>
+                </div>
+                <div>
+                    <span>APELLIDO</span>
+                    <p id="apellidoMostrado"></p>
                 </div>
                 <div>
                     <span>NUMERO DE MEMBRESIA</span>
                     <p>0000001-9</p>
+                </div>
+                <div>
+                    <span>ID</span>
+                    <p id="idMostrado"></p>
+                </div>
+                <div>
+                    <span>EMAIL</span>
+                    <p id="emailMostrado"></p>
+                </div>
+                <div>
+                    <span>NÚMERO DE TELÉFONO</span>
+                    <p id="telMostrado"></p>
                 </div>
                 <div>
                     <span>FECHA DE EXPIRACION</span>
@@ -60,8 +76,8 @@
                 <div>
                     <button class="renovar">RENOVAR</button>
                 </div>
-
             </div>
+        </div>
         </div>
         <div class="contenedor2">
             <p>Esta membresía pertenece al miembro principal: <img class="user" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
@@ -98,8 +114,28 @@
 
     </section>
 
+
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener todos los datos guardados
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData) {
+            document.getElementById('nombreMostrado').textContent = userData.nombre;
+            document.getElementById('apellidoMostrado').textContent = userData.apellido;
+            document.getElementById('emailMostrado').textContent = userData.email;
+            document.getElementById('idMostrado').textContent = userData.id;
+            document.getElementById('telMostrado').textContent = userData.telefono;
+            // ... actualizar otros campos ...
+        }
+    });
+</script>
+</body>
+
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
     </footer>
-</body>
+
 </html>
