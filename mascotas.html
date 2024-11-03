@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas - Tienda</title>
+    <link rel="stylesheet" href="CSS/shop.css">
+    <link rel="stylesheet" href="CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación superior -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Iniciar sesión</button>
+            </div>
+        </div>
+
+        <!-- Barra de navegación inferior -->
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="membership.html">Membresía</a></li>
+                <li><a href="compras_recientes.html">Compras Recientes</a></li>
+                <li><a href="tarjeta_credito.html">Tarjeta de Crédito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Título y sección de productos de la categoría Mascotas -->
+        <section class="products">
+            <h2>Productos para Mascotas</h2>
+            <div class="product-grid">
+                <!-- Producto 1 -->
+                <div class="product-item">
+                    <img src="IMG/comida de perro.png" alt="Alimento para Perro">
+                    <p>Alimento Premium para Perro Adulto 15kg</p>
+                    <p class="price">$35.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <img src="IMG/Arena para gato.png" alt="Arena para Gato">
+                    <p>Arena para Gato Sin Aroma 10kg</p>
+                    <p class="price">$12.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-item">
+                    <img src="IMG/juguete para perro.png" alt="Juguete para Mascotas">
+                    <p>Juguete de Peluche para Perros</p>
+                    <p class="price">$8.50</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-item">
+                    <img src="IMG/cama para perros.png" alt="Cama para Mascotas">
+                    <p>Cama Suave para Mascotas - Tamaño Mediano</p>
+                    <p class="price">$20.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-item">
+                    <img src="IMG/collar para perro y gato.png" alt="Collar Antipulgas">
+                    <p>Collar Antipulgas para Perros y Gatos</p>
+                    <p class="price">$14.99</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-item">
+                    <img src="IMG/trasportadora de perritos.png" alt="Transportadora para Mascotas">
+                    <p>Transportadora para Mascotas Pequeñas</p>
+                    <p class="price">$28.75</p>
+                    <button class="btn-buy">Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

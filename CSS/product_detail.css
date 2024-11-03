@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #1e3b68;
+    --secondary-color: #f0f3f5;
+    --text-color: #16243e;
+    --button-color: #ff5733;
+    --background-color: #ffffff;
+    --highlight-color: #ff4500;
+    --price-color: #e60023;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 8px;
+    background-color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.product-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
+
+.product-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.product-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    flex: 1;
+}
+
+.product-description h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.item-number, .description-text {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+.membership-prices h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.membership-prices ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.membership-prices ul li {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 5px 0;
+}
+
+.membership-prices .price {
+    font-weight: bold;
+    color: var(--price-color);
+}
+
+.quantity-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-make-purchase {
+    background-color: var(--button-color);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-make-purchase:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Footer styling */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        width: 200px;
+    }
+
+    .btn-make-purchase {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: var(--primary-color); 
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 20px; 
+}
+
+.btn-back:hover {
+    background-color: #163258; 
+    transform: scale(1.05); 
+}

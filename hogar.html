@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogar - Tienda</title>
+    <link rel="stylesheet" href="CSS/shop.css">
+    <link rel="stylesheet" href="CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación superior -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Iniciar sesión</button>
+            </div>
+        </div>
+
+        <!-- Barra de navegación inferior -->
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="membership.html">Membresía</a></li>
+                <li><a href="compras_recientes.html">Compras Recientes</a></li>
+                <li><a href="tarjeta_credito.html">Tarjeta de Crédito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Título y sección de productos de la categoría Hogar -->
+        <section class="products">
+            <h2>Productos de Hogar</h2>
+            <div class="product-grid">
+                <!-- Producto 1 -->
+                <div class="product-item">
+                    <img src="IMG/Sabanas1.png" alt="Juego de Sábanas">
+                    <p>Juego de Sábanas Queen Size</p>
+                    <p class="price">$55.99</p>
+                    <button class="btn-buy" onclick="window.location.href='sabanas.html'">Comprar</button>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <img src="IMG/Vasos.png" alt="Set de Vasos">
+                    <p>Set de Vasos de Cristal (6 piezas)</p>
+                    <p class="price">$18.50</p>
+                    <button class="btn-buy" onclick="window.location.href='vasos.html'">Comprar</button>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-item">
+                    <img src="IMG/Organizador de Ropa.png" alt="Organizador de Ropa">
+                    <p>Organizador de Ropa Plegable</p>
+                    <p class="price">$12.99</p>
+                    <button class="btn-buy" onclick="window.location.href='organizador.html'">Comprar</button>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-item">
+                    <img src="IMG/Cafetera.png" alt="Cafetera">
+                    <p>Cafetera Eléctrica con Temporizador</p>
+                    <p class="price">$135.99</p>
+                    <button class="btn-buy" onclick="window.location.href='cafetera.html'">Comprar</button>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-item">
+                    <img src="IMG/LamparaLed.png" alt="Lámpara de Escritorio">
+                    <p>Lámpara de Escritorio LED Ajustable</p>
+                    <p class="price">$22.99</p>
+                    <button class="btn-buy" onclick="window.location.href='lampara.html'">Comprar</button>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-item">
+                    <img src="IMG/Aspiradora.png" alt="Aspiradora">
+                    <p>Aspiradora Vertical sin Bolsa</p>
+                    <p class="price">$179.99</p>
+                    <button class="btn-buy" onclick="window.location.href='aspiradora.html'">Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
