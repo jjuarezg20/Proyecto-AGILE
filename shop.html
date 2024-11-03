@@ -30,7 +30,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="/shop.html">Shop</a></li>
                 <li><a href="Buy_Membership.html">Membership</a></li>
-                <li><a href="#">Recent Purchases</a></li>
+                <li><a href="recent_purchases.html">Recent Purchases</a></li>
                 <li><a href="#">Credit Card</a></li>
             </ul>
         </nav>
@@ -42,7 +42,7 @@
             <div class="banner-content">
                 <h1>¡Preparate para la Navidad!</h1>
                 <p>Encuentra los mejores accesorios navideños para decorar tu hogar</p>
-                <button>Ver Más</button>
+                <button onclick="window.location.href='productos_navidenos.html'">Ver Más</button>
             </div>
             <div class="banner-image"> 
                 <img src="IMG/banerNavideño.png" alt="Accesorios Navideños">
@@ -97,45 +97,45 @@
             </div>
         </section>
 
-        <!-- Sección de productos -->
+        <!-- Sección de productos destacados -->
         <section class="products">
             <h2>Productos Destacados</h2>
             <div class="product-grid">
                 <div class="product-item">
-                    <img src="IMG/Bocionajbl.png" alt="Producto 1">
+                    <img src="IMG/Bocionajbl.png" alt="Bocina JBL Charge 5">
                     <p>JBL Bocina JBL Charge 5 40Watts</p>
                     <p class="price">$49.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
                 <div class="product-item">
-                    <img src="IMG/SecadoraDyson.png" alt="Producto 2">
+                    <img src="IMG/SecadoraDyson.png" alt="Secadora Dyson">
                     <p>Secadora de cabello Dyson SuperSonic gold/blue</p>
                     <p class="price">$625.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
                 <div class="product-item">
-                    <img src="IMG/Ps5.png" alt="Producto 3">
+                    <img src="IMG/Ps5.png" alt="PlayStation 5">
                     <p>PlayStation®5 console</p>
                     <p class="price">$444.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
                 <div class="product-item">
-                    <img src="IMG/leggins.jpg" alt="Producto 4">
+                    <img src="IMG/leggins.jpg" alt="Leggins CRZ YOGA">
                     <p>CRZ YOGA Butterluxe High Waisted Lounge Legging 25"</p>
                     <p class="price">$14.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
                 <div class="product-item">
-                    <img src="IMG/onedirection.jpg" alt="Producto 5">
+                    <img src="IMG/onedirection.jpg" alt="Cepillo One Direction">
                     <p>One Direction Singing Battery Powered Tooth Brush</p>
                     <p class="price">$9.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
                 <div class="product-item">
-                    <img src="IMG/colageno.jpg" alt="Producto 6">
+                    <img src="IMG/colageno.jpg" alt="Colágeno en Polvo">
                     <p>Micro Ingredients Multi Collagen Protein Powder, 2 Pounds</p>
                     <p class="price">$30.60</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
                 </div>
             </div>
         </section>
@@ -144,5 +144,11 @@
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function redirectToPayment() {
+            window.location.href = 'pago.html';
+        }
+    </script>
 </body>
 </html>
