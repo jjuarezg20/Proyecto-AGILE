@@ -9,21 +9,12 @@
 </head>
 <body>
     <header>
-            <!-- Top navigation bar -->
-            <div class="top-nav">
-                <div class="left">
-                    <img src="IMG/logo.jpg" alt="Logo" class="logo">
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for Products, brands and more...">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
-                <div class="right">
-                    <span class="account"><i class="fa fa-user"></i> Account:</span>
-                    <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
-                </div>
-                
+        <!-- Top navigation bar -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
+<<<<<<< HEAD
     
             <!-- Bottom navigation bar -->
             <nav class="bottom-nav">
@@ -32,26 +23,61 @@
                     <li><a href="Buy_Membership.html">Membership</a></li>
                     <li><a href="recent_purchases.html">Recent Purchases</a></li>
                     <li><a href="#">Credit Card</a></li>
+=======
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Products, brands and more...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+            </div>
+            
+        </div>
+>>>>>>> 53f830aaad95683bd9b547bcd9a638cbc3313c94
 
-                </ul>
-            </nav>
-    </header>
+        <!-- Bottom navigation bar -->
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="Buy_Membership.html">Membership</a></li>
+                <li><a href="paginaPersonal.html">My Account</a></li>
+            </ul>
+        </nav>
+</header>
 
     <section>
         <br>
         <br>
         <div class="contenedor1">
-            <div class="tipoMem">
+            <div class="tipoMem" id="tipoMembresiaMostrada">
                 Diamond
             </div>
             <div class="datos">
                 <div>
                     <span>NOMBRE</span>
-                    <p>Karla Melissa Torres Solorzano</p>
+                    <p id="nombreMostrado"></p>
+                </div>
+                <div>
+                    <span>APELLIDO</span>
+                    <p id="apellidoMostrado"></p>
                 </div>
                 <div>
                     <span>NUMERO DE MEMBRESIA</span>
                     <p>0000001-9</p>
+                </div>
+                <div>
+                    <span>ID</span>
+                    <p id="idMostrado"></p>
+                </div>
+                <div>
+                    <span>EMAIL</span>
+                    <p id="emailMostrado"></p>
+                </div>
+                <div>
+                    <span>NÚMERO DE TELÉFONO</span>
+                    <p id="telMostrado"></p>
                 </div>
                 <div>
                     <span>FECHA DE EXPIRACION</span>
@@ -60,8 +86,8 @@
                 <div>
                     <button class="renovar">RENOVAR</button>
                 </div>
-
             </div>
+        </div>
         </div>
         <div class="contenedor2">
             <p>Esta membresía pertenece al miembro principal: <img class="user" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
@@ -98,8 +124,29 @@
 
     </section>
 
+
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener todos los datos guardados
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData) {
+            document.getElementById('nombreMostrado').textContent = userData.nombre;
+            document.getElementById('apellidoMostrado').textContent = userData.apellido;
+            document.getElementById('emailMostrado').textContent = userData.email;
+            document.getElementById('idMostrado').textContent = userData.id;
+            document.getElementById('telMostrado').textContent = userData.telefono;
+            // ... actualizar otros campos ...
+            document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
+        }
+    });
+</script>
+</body>
+
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
     </footer>
-</body>
+
 </html>

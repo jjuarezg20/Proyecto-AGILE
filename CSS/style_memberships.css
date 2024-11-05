@@ -29,64 +29,80 @@ h2 {
 
 }
 
-/* Estilo para las tarjetas de membresía */
 .membership-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-    max-width: 800px;
-    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Estilo para las tarjetas */
 .card {
-    background-color: #f0f3f5;  /* Fondo claro */
-    color: #1e3b68;  /* Texto oscuro */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);  /* Sombra ligera */
-    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .card-image img {
-    width: 150px; /* Adjust this value to make the image smaller */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Adds rounded corners to the image */
+    max-width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .card ul {
-    list-style-type: none; /* Removes default list bullet points */
-    padding-left: 0; /* Removes default left padding */
+    list-style-type: none;
+    padding: 0;
 }
 
-.card li {
-    margin-bottom: 5px; /* Adds some space between list items */
-}
-
-h3 {
-    font-size: 1.2rem;
-    color: #16243e;  /* Título oscuro */
+.card ul li {
+    margin-bottom: 8px;
+    color: #555;
 }
 
 .price {
-    font-size: 1.1rem;
-    color: #16243e;  /* Color oscuro */
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin: 15px 0;
 }
 
-/* Botones de las tarjetas */
 .btn-join {
-    background-color: #f0f3f5;  /* Fondo claro */
-    color: #1e3b68;  /* Texto oscuro */
-    padding: 0.5rem;
-    border-radius: 30px;
-    border: 2px solid #1e3b68;  /* Borde oscuro */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btn-join:hover {
-    background-color: #16243e;  /* Fondo oscuro al pasar el cursor */
-    color: white;  /* Texto blanco al pasar el cursor */
+    background-color: #0056b3;
 }
+
+
 
 /* Footer */
 .footer {

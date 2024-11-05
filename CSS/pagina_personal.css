@@ -22,32 +22,30 @@ html{
     border-top-right-radius: 8px;
 }
 
-.contenedor1 .datos{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+
+.datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.contendor1 .datos div{
-    text-align: left;
+.datos > div {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }
 
-.datos div span{
-    display: block;
-    color: #6c757d;
+.datos span {
     font-size: 12px;
+    color: #666;
+    font-weight: bold;
+    display: block;
     margin-bottom: 5px;
 }
 
-.datos div p{
-    margin: 0;
+.datos p {
     font-size: 16px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.datos div p.expiracion{
-    color: #28a745;
+    color: #333;
+    margin: 0;
 }
 
 .datos .renovar{

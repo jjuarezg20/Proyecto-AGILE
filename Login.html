@@ -9,21 +9,12 @@
 </head>
 <body>
     <header>
-            <!-- Top navigation bar -->
-            <div class="top-nav">
-                <div class="left">
-                    <img src="IMG/logo.jpg" alt="Logo" class="logo">
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for Products, brands and more...">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
-                <div class="right">
-                    <span class="account"><i class="fa fa-user"></i> Account:</span>
-                    <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
-                </div>
-                
+        <!-- Top navigation bar -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
+<<<<<<< HEAD
     
             <!-- Bottom navigation bar -->
             <nav class="bottom-nav">
@@ -36,6 +27,29 @@
                 </ul>
             </nav>
     </header>
+=======
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Products, brands and more...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+            </div>
+            
+        </div>
+
+        <!-- Bottom navigation bar -->
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="Buy_Membership.html">Membership</a></li>
+                <li><a href="paginaPersonal.html">My Account</a></li>
+            </ul>
+        </nav>
+</header>
+>>>>>>> 53f830aaad95683bd9b547bcd9a638cbc3313c94
     <div class="container">
         <div class="login-container">
             <img src="IMG/logo_login.jpg" alt="Membresía" class="membresia-img">
@@ -43,18 +57,39 @@
             <p class="login-description">Log in to get the most from your membership</p>
             <form action="#" method="post">
                 <div class="input-group">
-                    <label for="email">Membership number or Email</label>
+                    <label for="email">Membership number or email</label>
                     <input type="email" id="email" name="email" required>
+                </div>
+                <!-- Agregar el nuevo campo de contraseña -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn-login">Log In</button>
             </form>
             <p class="not-a-member">Not a Member?</p>
-            <!-- Botón actualizado que redirige a la página de compra de membresía -->
             <a href="Buy_Membership.html" class="btn-buy-membership">Buy Membership</a>
             <button type="button" class="btn-cancel" onclick="window.location.href='index.html'">Cancel</button>
         </div>
     </div>
-
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Obtener los datos del usuario almacenados
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.email === email && userData.password === password) {
+                alert('Login successful!');
+                window.location.href = 'paginaPersonal.html';
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+        </script>
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
     </footer>
