@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <link rel="stylesheet" href="CSS/payment.css">
+    <link rel="stylesheet" href="CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Iniciar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Página de Pago</h1>
+        <div class="payment-container">
+            <!-- Resumen del pedido -->
+            <section class="order-summary">
+                <h2>Resumen del Pedido</h2>
+                <p>Producto: <span id="product-name">Producto Ejemplo</span></p>
+                <p>Cantidad: <span id="product-quantity">1</span></p>
+                <p>Precio total: <span id="product-price">$10.00</span></p>
+            </section>
+
+            <!-- Información de envío -->
+            <section class="shipping-info">
+                <h2>Dirección de Envío</h2>
+                <form id="shipping-form">
+                    <label for="full-name">Nombre completo:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="city">Ciudad:</label>
+                    <input type="text" id="city" name="city" required>
+
+                    <label for="postal-code">Código Postal:</label>
+                    <input type="text" id="postal-code" name="postal-code" required>
+
+                    <label for="country">País:</label>
+                    <input type="text" id="country" name="country" required>
+                </form>
+            </section>
+
+            <!-- Información de pago -->
+            <section class="payment-info">
+                <h2>Información de Pago</h2>
+                <form id="payment-form">
+                    <label for="card-number">Número de Tarjeta:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+
+                    <label for="expiry-date">Fecha de Expiración:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </form>
+            </section>
+
+            <!-- Botón para confirmar el pago -->
+            <button class="btn-confirm" onclick="confirmPayment()">Confirmar Pago</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function confirmPayment() {
+            const productName = document.getElementById("product-name").textContent;
+            const quantity = parseInt(document.getElementById("product-quantity").textContent);
+            const totalPrice = document.getElementById("product-price").textContent;
+
+            // Obtener los datos de envío
+            const fullName = document.getElementById("full-name").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const postalCode = document.getElementById("postal-code").value;
+            const country = document.getElementById("country").value;
+
+            // Crear objeto de compra con la información de envío
+            const purchase = {
+                productName: productName,
+                quantity: quantity,
+                totalPrice: totalPrice,
+                date: new Date().toLocaleDateString(),
+                shippingInfo: {
+                    fullName: fullName,
+                    address: address,
+                    city: city,
+                    postalCode: postalCode,
+                    country: country
+                }
+            };
+
+            // Guardar en localStorage
+            const purchases = JSON.parse(localStorage.getItem("recentPurchases")) || [];
+            purchases.push(purchase);
+            localStorage.setItem("recentPurchases", JSON.stringify(purchases));
+
+            alert("Pago confirmado. Gracias por su compra.");
+            window.location.href = "index.html"; // Redirige a la página de inicio
+        }
+    </script>
+</body>
+</html>

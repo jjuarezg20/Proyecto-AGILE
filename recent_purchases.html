@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras Recientes</title>
+    <link rel="stylesheet" href="CSS/recent_purchases.css">
+    <link rel="stylesheet" href="CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            <img src="IMG/logo.jpg" alt="Logo" class="logo">
+            <button class="login-btn" onclick="window.location.href='index.html'">Volver a Inicio</button>
+        </div>
+    </header>
+
+    <main>
+        <h1>Compras Recientes</h1>
+        <div class="purchases-container">
+            <table id="purchases-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las compras se cargarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <p id="no-purchases-message">No hay compras recientes.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function loadRecentPurchases() {
+            const purchases = JSON.parse(localStorage.getItem("recentPurchases")) || [];
+            const tableBody = document.querySelector("#purchases-table tbody");
+            const noPurchasesMessage = document.getElementById("no-purchases-message");
+
+            tableBody.innerHTML = ""; // Limpiar la tabla
+
+            if (purchases.length === 0) {
+                noPurchasesMessage.style.display = "block";
+                document.getElementById("purchases-table").style.display = "none";
+            } else {
+                noPurchasesMessage.style.display = "none";
+                document.getElementById("purchases-table").style.display = "table";
+
+                purchases.forEach(purchase => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${purchase.productName}</td>
+                        <td>${purchase.quantity}</td>
+                        <td>${purchase.totalPrice}</td>
+                        <td>${purchase.date}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+        }
+
+        window.onload = loadRecentPurchases;
+    </script>
+</body>
+</html>
