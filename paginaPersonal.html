@@ -6,6 +6,8 @@
     <title>Página personal</title>
     <link rel="stylesheet" href=".//CSS/nav_bar.css">
     <link rel="stylesheet" href=".//CSS/pagina_personal.css">
+    <link rel="stylesheet" href=".//CSS/form_renovar.css">
+    <link rel="stylesheet" href="./renovarMembresia.php">
 </head>
 <body>
     <header>
@@ -58,7 +60,7 @@
                     <p class="expiracion">23/06/2026</p>
                 </div>
                 <div>
-                    <button class="renovar">RENOVAR</button>
+                    <button id="renewButton">RENOVAR</button>
                 </div>
 
             </div>
@@ -98,6 +100,58 @@
 
     </section>
 
+<<<<<<< Updated upstream
+=======
+    <div id="renewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <button type="submit" class="submit-btn">Renovar Membresía</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Mostrar el modal al hacer clic en "RENOVAR"
+        document.getElementById('renewButton').addEventListener('click', function() {
+            document.getElementById('renewModal').style.display = 'flex';
+        });
+    
+        // Cerrar el modal al hacer clic en la "X"
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('renewModal').style.display = 'none';
+        });
+    </script>
+
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener todos los datos guardados
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData) {
+            document.getElementById('nombreMostrado').textContent = userData.nombre;
+            document.getElementById('apellidoMostrado').textContent = userData.apellido;
+            document.getElementById('emailMostrado').textContent = userData.email;
+            document.getElementById('idMostrado').textContent = userData.id;
+            document.getElementById('telMostrado').textContent = userData.telefono;
+            // ... actualizar otros campos ...
+            document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
+        }
+    });
+</script>
+</body>
+
+>>>>>>> Stashed changes
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
     </footer>

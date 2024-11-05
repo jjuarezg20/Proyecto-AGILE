@@ -55,17 +55,6 @@ html{
     color: #28a745;
 }
 
-.datos .renovar{
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-.datos .renovar:hover{
-    transform: scale(1.2);
-    font-weight: bold;
-}
-
 .contenedor2{
     width: 80%;
     margin: 20px auto;
