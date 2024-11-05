@@ -77,6 +77,23 @@
                 </div>
             </div>
         </div>
+        <div id="renewModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <form method="POST" action="">
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Renovar Membresía</button>
+                </form>
+            </div>
+        </div>
+    
         </div>
         <div class="contenedor2">
             <p>Esta membresía pertenece al miembro principal: <img class="user" src=".//IMG/user.png" alt="ícono usuario">Julio Contreras</p>
@@ -131,7 +148,20 @@
             document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
         }
     });
+
+   // Mostrar el modal al hacer clic en "RENOVAR"
+    document.getElementById('renewButton').addEventListener('click', function() {
+        document.getElementById('renewModal').style.display = 'flex';
+    });
+
+    // Cerrar el modal al hacer clic en la "X"
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('renewModal').style.display = 'none';
+    });
+
 </script>
+ 
+
 </body>
 
     <footer class="footer">
