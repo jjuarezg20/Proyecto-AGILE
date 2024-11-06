@@ -4,93 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salud y Belleza - Tienda</title>
-    <link rel="stylesheet" href="CSS/shop.css">
-    <link rel="stylesheet" href="CSS/nav_bar.css">
+    <link rel="stylesheet" href="..//CSS/shop.css">
+    <link rel="stylesheet" href="..//CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <!-- Barra de navegación superior -->
+        <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <input type="text" placeholder="Search for Products, brands and more...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="right">
-                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
-                <button class="login-btn" onclick="window.location.href='Login.html'">Iniciar sesión</button>
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
+            
         </div>
 
-        <!-- Barra de navegación inferior -->
+        <!-- Bottom navigation bar -->
         <nav class="bottom-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="membership.html">Membresía</a></li>
-                <li><a href="Buy_Membership.html">Compras Recientes</a></li>
-                <li><a href="tarjeta_credito.html">Tarjeta de Crédito</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="Buy_Membership.html">Membership</a></li>
+                <li><a href="recent_purchases.html">Recent Purchases</a></li>
+                <li><a href="paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <!-- Título y sección de productos de la categoría Salud y Belleza -->
+        <!-- Title and Health & Beauty Products Section -->
         <section class="products">
-            <h2>Productos de Salud y Belleza</h2>
+            <h2>Health and Beauty Products</h2>
             <div class="product-grid">
-                <!-- Producto 1 -->
+                <!-- Product 1 -->
                 <div class="product-item">
-                    <img src="IMG/crema.png" alt="Crema Hidratante">
-                    <p>Crema Hidratante Facial 50ml</p>
+                    <img src="..//IMG/crema.png" alt="Moisturizing Cream">
+                    <p>Facial Moisturizing Cream 50ml</p>
                     <p class="price">$12.50</p>
-                    <button class="btn-buy" onclick="window.location.href='crema.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='crema.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 2 -->
+                <!-- Product 2 -->
                 <div class="product-item">
-                    <img src="IMG/Protector Solar.png" alt="Protector Solar">
-                    <p>Protector Solar SPF 50</p>
+                    <img src="..//IMG/Protector Solar.png" alt="Sunscreen">
+                    <p>Sunscreen SPF 50</p>
                     <p class="price">$18.99</p>
-                    <button class="btn-buy" onclick="window.location.href='protector_solar.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='protector_solar.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 3 -->
+                <!-- Product 3 -->
                 <div class="product-item">
-                    <img src="IMG/Suplemento de Vitamina C.png" alt="Suplemento Vitamina C">
-                    <p>Suplemento de Vitamina C 1000mg</p>
+                    <img src="..//IMG/Suplemento de Vitamina C.png" alt="Vitamin C Supplement">
+                    <p>Vitamin C Supplement 1000mg</p>
                     <p class="price">$9.99</p>
-                    <button class="btn-buy" onclick="window.location.href='vitamina_c.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='vitamina_c.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 4 -->
+                <!-- Product 4 -->
                 <div class="product-item">
-                    <img src="IMG/Shampoo Orgánico 500ml.png" alt="Shampoo Orgánico">
-                    <p>Shampoo Orgánico 500ml</p>
+                    <img src="..//IMG/Shampoo Orgánico 500ml.png" alt="Organic Shampoo">
+                    <p>Organic Shampoo 500ml</p>
                     <p class="price">$7.50</p>
-                    <button class="btn-buy" onclick="window.location.href='shampoo.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='shampoo.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 5 -->
+                <!-- Product 5 -->
                 <div class="product-item">
-                    <img src="IMG/Mascarilla Facial .png" alt="Mascarilla Facial">
-                    <p>Mascarilla Facial de Arcilla 100ml</p>
+                    <img src="..//IMG/Mascarilla Facial .png" alt="Facial Mask">
+                    <p>Clay Facial Mask 100ml</p>
                     <p class="price">$5.99</p>
-                    <button class="btn-buy" onclick="window.location.href='mascarilla.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='mascarilla.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 6 -->
+                <!-- Product 6 -->
                 <div class="product-item">
-                    <img src="IMG/Suero Anti-envejecimiento.png" alt="Suero Anti-envejecimiento">
-                    <p>Suero Anti-envejecimiento 30ml</p>
+                    <img src="..//IMG/Suero Anti-envejecimiento.png" alt="Anti-aging Serum">
+                    <p>Anti-aging Serum 30ml</p>
                     <p class="price">$25.00</p>
-                    <button class="btn-buy" onclick="window.location.href='suero.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='suero.html'">Buy</button>
                 </div>
             </div>
         </section>
     </main>
+    
 
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
+        }
+    });
+    </script>
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
