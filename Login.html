@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="CSS/nav_bar.css">
 </head>
 <body>
-
     <header>
-        <!-- Top navigation bar -->
+        <!-- Barra de navegación superior -->
         <div class="top-nav">
             <div class="left">
                 <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
+    
+            <!-- Barra de navegación inferior -->
+            <nav class="bottom-nav">
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="Buy_Membership.html">Membership</a></li>
+                    <li><a href="recent_purchases.html">Recent Purchases</a></li>
+                    <li><a href="#">Credit Card</a></li>
+                </ul>
+            </nav>
+    </header>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
                 <button><i class="fa fa-search"></i></button>
@@ -23,20 +33,19 @@
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
                 <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
+            
         </div>
 
-        <!-- Bottom navigation bar -->
+        <!-- Barra de navegación inferior -->
         <nav class="bottom-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="Login.html">Shop</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="Buy_Membership.html">Membership</a></li>
-                <li><a href="Login.html">My Account</a></li>
+                <li><a href="paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
     </header>
-
-
     <div class="container">
         <div class="login-container">
             <img src="IMG/logo_login.jpg" alt="Membresía" class="membresia-img">
@@ -44,10 +53,10 @@
             <p class="login-description">Log in to get the most from your membership</p>
             <form action="#" method="post">
                 <div class="input-group">
-                    <label for="email">Membership number or email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="nombre">Name</label>
+                    <input type="text" id="nombre" name="nombre" required>
                 </div>
-                <!-- Agregar el nuevo campo de contraseña -->
+                <!-- Campo de contraseña -->
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
@@ -63,22 +72,26 @@
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const email = document.getElementById('email').value;
+            const nombre = document.getElementById('nombre').value;
             const password = document.getElementById('password').value;
             
             // Obtener los datos del usuario almacenados
             const userData = JSON.parse(localStorage.getItem('userData'));
             
-            if (userData && userData.email === email && userData.password === password) {
+            if (userData && userData.nombre === nombre && userData.password === password) {
                 alert('Login successful!');
                 window.location.href = 'paginaPersonal.html';
             } else {
-                alert('Invalid email or password');
+                alert('Invalid name or password');
             }
         });
-        </script>
+    </script>
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
     </footer>
 </body>
 </html>
