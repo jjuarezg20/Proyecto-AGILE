@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member's Club</title>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="CSS/style_login.css">
     <link rel="stylesheet" href="CSS/nav_bar.css">
-    <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
     <header>
@@ -14,6 +14,18 @@
             <div class="left">
                 <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
+    
+            <!-- Bottom navigation bar -->
+            <nav class="bottom-nav">
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="Buy_Membership.html">Membership</a></li>
+                    <li><a href="recent_purchases.html">Recent Purchases</a></li>
+                    <li><a href="#">Credit Card</a></li>
+     
+                </ul>
+            </nav>
+    </header>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
                 <button><i class="fa fa-search"></i></button>
@@ -22,6 +34,7 @@
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
                 <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
+            
         </div>
 
         <!-- Bottom navigation bar -->
@@ -30,91 +43,52 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="Buy_Membership.html">Membership</a></li>
-                <li><a href="recent_purchases.html">Recent Purchases</a></li>
-                <li><a href="#">Credit Card</a></li>
                 <li><a href="paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
-    </header>
-
-    <!-- Membership Expiry Notification -->
-    <section class="notification-section">
-        <div class="notification">
-            <p>Your membership is about to expire. Renew now to keep enjoying your benefits!</p>
-            <button onclick="window.location.href='Buy_Membership.html'">Renew Membership</button>
+</header>
+    <div class="container">
+        <div class="login-container">
+            <img src="IMG/logo_login.jpg" alt="Membresía" class="membresia-img">
+            <h2>Member's Club</h2>
+            <p class="login-description">Log in to get the most from your membership</p>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="email">Membership number or email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <!-- Agregar el nuevo campo de contraseña -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">Log In</button>
+            </form>
+            <p class="not-a-member">Not a Member?</p>
+            <a href="Buy_Membership.html" class="btn-buy-membership">Buy Membership</a>
+            <button type="button" class="btn-cancel" onclick="window.location.href='index.html'">Cancel</button>
         </div>
-    </section>
-
-    <section class="membership-section">
-        <div class="container" style="display: flex;">
-            <div class="membership-info">
-                <h2>Get your Membership!</h2>
-                <p>So much to gain and nothing to lose.</p>
-                <button class="membership-btn">Get your Membership!</button>
-            </div>
-            <div class="membership-benefits">
-                <div class="benefit">
-                    <img src="IMG/precio.jpg" alt="Price">
-                    <h3>Price</h3>
-                </div>
-                <div class="benefit">
-                    <img src="IMG/calidad.jpg" alt="Quality">
-                    <h3>Quality</h3>
-                </div>
-                <div class="benefit">
-                    <img id="garantia" src="IMG/garantia.jpg" alt="Guarantee">
-                    <h3>Guarantee</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="products-section">
-        <div class="container">
-            <h2>Everything you need, online</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="IMG/carne.jpg" alt="Grilled Meat">
-                    <h3>Perfect for grilling or cooking</h3>
-                    <p>Enjoy the best meat products. Juicy and delicious.</p>
-                    <a href="#" class="view-more">View More</a>
-                    <div class="hover-message">You need to log in or sign up</div>
-                </div>
-
-                <div class="product-card">
-                    <img src="IMG/vegetales.jpg" alt="Fresh Vegetables">
-                    <h3>From the farm to your table</h3>
-                    <p>Bring natural goodness to every meal with fresh vegetables.</p>
-                    <a href="#" class="view-more">View More</a>
-                    <div class="hover-message">You need to log in or sign up</div>
-                </div>
-
-                <div class="product-card">
-                    <img src="IMG/frutas.jpg" alt="Fresh Fruits">
-                    <h3>Eat fresh & healthy</h3>
-                    <p>Enjoy our selection of fresh fruits perfect for salads, juices, and snacks.</p>
-                    <a href="#" class="view-more">View More</a>
-                    <div class="hover-message">You need to log in or sign up</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="members-savings-section">
-        <h2>Members Savings</h2>
-        <div class="savings-container">
-            <div class="savings-card">
-                <img src="IMG/download (8).jpeg" alt="Sofa Savings">
-            </div>
-            <div class="savings-card">
-                <img src="IMG/download (9).jpeg" alt="TV Savings">
-            </div>
-        </div>
-    </section>
-
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Obtener los datos del usuario almacenados
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.email === email && userData.password === password) {
+                alert('Login successful!');
+                window.location.href = 'paginaPersonal.html';
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+        </script>
+    <footer class="footer">
+        <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
+    </footer>
 </body>
-
-<footer class="footer">
-    <p>&copy; 2024 Members Club. All rights reserved.</p>
-</footer>
-
 </html>
-
