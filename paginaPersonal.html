@@ -56,7 +56,7 @@
                 </div>
                 <div>
                     <span>NUMERO DE MEMBRESIA</span>
-                    <p>0000001-9</p>
+                    <p id="numeroMembresia"></p>
                 </div>
                 <div>
                     <span>ID</span>
@@ -72,7 +72,7 @@
                 </div>
                 <div>
                     <span>FECHA DE EXPIRACION</span>
-                    <p class="expiracion">23/06/2026</p>
+                    <p class="expiracion"></p>
                 </div>
                 <div>
                     <button class="renovar">RENOVAR</button>
@@ -136,6 +136,16 @@
 
 
 <script>
+
+        function generarNumeroMembresia() {
+        let numero = '';
+        for (let i = 0; i < 10; i++) {
+            numero += Math.floor(Math.random() * 10);
+        }
+        return numero;
+    }
+
+
     document.addEventListener('DOMContentLoaded', function() {
         // Obtener todos los datos guardados
         const userData = JSON.parse(localStorage.getItem('userData'));
@@ -148,6 +158,10 @@
             document.getElementById('telMostrado').textContent = userData.telefono;
             // ... actualizar otros campos ...
             document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
+
+            // Generar y mostrar el número de membresía
+            const numeroMembresia = generarNumeroMembresia();
+            document.getElementById('numeroMembresia').textContent = numeroMembresia;
 
             // Generar fecha de expiración aleatoria
             const hoy = new Date();
