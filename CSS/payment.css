@@ -1,0 +1,205 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f3f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3b68;
+    margin: 20px 0;
+}
+
+/* Contenedor principal de pago */
+.payment-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilos para las secciones */
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #1e3b68;
+    margin-bottom: 20px;
+}
+
+/* Resumen del pedido */
+.order-summary {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* Formularios */
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1e3b68;
+    box-shadow: 0 0 5px rgba(30, 59, 104, 0.2);
+}
+
+/* Información de envío */
+.shipping-info {
+    background-color: white;
+}
+
+/* Información de pago */
+.payment-info {
+    background-color: white;
+}
+
+/* Campos de tarjeta de crédito */
+#card-number, #expiry-date, #cvv {
+    font-family: monospace;
+}
+
+#expiry-date {
+    width: 100px;
+}
+
+#cvv {
+    width: 70px;
+}
+
+/* Botón de confirmar pago */
+.btn-confirm {
+    background-color: #1e3b68;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-confirm:hover {
+    background-color: #152a4d;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .payment-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .btn-confirm {
+        padding: 12px 20px;
+    }
+}
+
+/* Validación visual de campos */
+input:invalid {
+    border-color: #ff6b6b;
+}
+
+input:valid {
+    border-color: #51cf66;
+}
+
+/* Animaciones */
+.btn-confirm {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.btn-confirm:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.footer {
+    background-color: #1e3b68;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Estilos adicionales para mejorar la presentación */
+.payment-info .card-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+}
+
+.shipping-info input,
+.payment-info input {
+    margin-bottom: 15px;
+}
+
+/* Estilos para mostrar errores */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Estilos para indicador de seguridad */
+.security-indicator {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.security-indicator i {
+    margin-right: 5px;
+    color: #51cf66;
+}
