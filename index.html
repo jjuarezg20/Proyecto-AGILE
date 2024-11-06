@@ -9,36 +9,41 @@
 </head>
 <body>
     <header>
-            <!-- Top navigation bar -->
-            <div class="top-nav">
-                <div class="left">
-                    <img src="IMG/logo.jpg" alt="Logo" class="logo">
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for Products, brands and more...">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
-                <div class="right">
-                    <span class="account"><i class="fa fa-user"></i> Account:</span>
-                    <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
-                </div>
-                
+        <!-- Top navigation bar -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
-    
-            <!-- Bottom navigation bar -->
-            <nav class="bottom-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="Buy_Membership.html">Membership</a></li>
-                    <li><a href="recent_purchases.html">Recent Purchases</a></li>
-                    <li><a href="#">Credit Card</a></li>
-                    
-                    <li><a href="paginaPersonal.html">My Account</a></li>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Products, brands and more...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+            </div>
+        </div>
 
-                </ul>
-            </nav>
+        <!-- Bottom navigation bar -->
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="Buy_Membership.html">Membership</a></li>
+                <li><a href="recent_purchases.html">Recent Purchases</a></li>
+                <li><a href="#">Credit Card</a></li>
+                <li><a href="paginaPersonal.html">My Account</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <!-- Membership Expiry Notification -->
+    <section class="notification-section">
+        <div class="notification" style="display: none;">
+            <p>Your membership is about to expire. Renew now to keep enjoying your benefits!</p>
+            <button onclick="window.location.href='Buy_Membership.html'">Renew Membership</button>
+        </div>
+    </section>
 
     <section class="membership-section">
         <div class="container" style="display: flex;">
@@ -63,6 +68,7 @@
             </div>
         </div>
     </section>
+
     <section class="products-section">
         <div class="container">
             <h2>Everything you need, online</h2>
@@ -93,6 +99,7 @@
             </div>
         </div>
     </section>
+
     <section class="members-savings-section">
         <h2>Members Savings</h2>
         <div class="savings-container">
@@ -104,8 +111,25 @@
             </div>
         </div>
     </section>
-    
-    
+
+    <!-- JavaScript to check membership status -->
+    <script>
+        function checkMembershipStatus() {
+            fetch('php/check_membership.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.expiresSoon) {
+                        const notification = document.querySelector('.notification');
+                        notification.style.display = 'block';
+                        notification.querySelector('p').textContent = 
+                            `Your membership will expire in ${data.daysRemaining} day(s). Renew now!`;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        window.onload = checkMembershipStatus;
+    </script>
 </body>
 
 <footer class="footer">
