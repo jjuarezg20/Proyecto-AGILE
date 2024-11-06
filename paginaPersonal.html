@@ -6,6 +6,8 @@
     <title>Página personal</title>
     <link rel="stylesheet" href=".//CSS/nav_bar.css">
     <link rel="stylesheet" href=".//CSS/pagina_personal.css">
+    <link rel="stylesheet" href="CSS/form_renovar.css">
+    <link href="php/renovarMembresia.php">
 </head>
 <body>
     <header>
@@ -113,9 +115,26 @@
 
     </section>
 
+    <div id="renewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <button type="submit" class="submit-btn">Renovar Membresía</button>
+            </form>
+        </div>
+    </div>
 
 
-    
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Obtener todos los datos guardados
@@ -129,9 +148,34 @@
             document.getElementById('telMostrado').textContent = userData.telefono;
             // ... actualizar otros campos ...
             document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
+
+            // Generar fecha de expiración aleatoria
+            const hoy = new Date();
+            const unMesDespues = new Date(hoy.getFullYear(), hoy.getMonth() + 1, hoy.getDate());
+            const unAnioDespues = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate());
+            const tiempoAleatorio = unMesDespues.getTime() + Math.random() * (unAnioDespues.getTime() - unMesDespues.getTime());
+            const fechaExpiracion = new Date(tiempoAleatorio);
+
+            // Formatear la fecha como dd/mm/yyyy
+            const fechaFormateada = `${fechaExpiracion.getDate().toString().padStart(2, '0')}/${(fechaExpiracion.getMonth() + 1).toString().padStart(2, '0')}/${fechaExpiracion.getFullYear()}`;
+
+            document.querySelector('.expiracion').textContent = fechaFormateada;
         }
+
+        // Mostrar el modal al hacer clic en "RENOVAR"
+        document.querySelector('.renovar').addEventListener('click', function() {
+            document.getElementById('renewModal').style.display = 'flex';
+        });
+    
+        // Cerrar el modal al hacer clic en la "X"
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('renewModal').style.display = 'none';
+        });
     });
 </script>
+
+
+
 </body>
 
     <footer class="footer">
