@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mascotas - Tienda</title>
-    <link rel="stylesheet" href="CSS/shop.css">
-    <link rel="stylesheet" href="CSS/nav_bar.css">
+    <link rel="stylesheet" href="..//CSS/shop.css">
+    <link rel="stylesheet" href="..//CSS/nav_bar.css">
 </head>
 <body>
     <header>
         <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
@@ -20,7 +20,8 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
             
         </div>
@@ -28,73 +29,85 @@
         <!-- Bottom navigation bar -->
         <nav class="bottom-nav">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="membership.html">Membresía</a></li>
-                <li><a href="recent_purchases.html">recent purchases</a></li>
-                <li><a href="tarjeta_credito.html">Tarjeta de Crédito</a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="Buy_Membership.html">Membership</a></li>
-                <li><a href="paginaPersonal.html">My Account</a></li>
+                <li><a href="..//index.html">Home</a></li>
+                <li><a href="..//shop.html">Shop</a></li>
+                <li><a href="..//Buy_Membership.html">Membership</a></li>
+                <li><a href="..//recent_purchases.html">Recent Purchases</a></li>
+                <li><a href="..//paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
-</header>
+    </header>
+
     <main>
-        <!-- Título y sección de productos de la categoría Mascotas -->
+        <!-- Title and Pet Products Section -->
         <section class="products">
-            <h2>Productos para Mascotas</h2>
+            <h2>Pet Products</h2>
             <div class="product-grid">
-                <!-- Producto 1 -->
+                <!-- Product 1 -->
                 <div class="product-item">
-                    <img src="IMG/comida de perro.png" alt="Alimento para Perro">
-                    <p>Alimento Premium para Perro Adulto 15kg</p>
+                    <img src="..//IMG/comida de perro.png" alt="Dog Food">
+                    <p>Premium Dog Food for Adult Dogs 15kg</p>
                     <p class="price">$35.99</p>
-                    <button class="btn-buy" onclick="window.location.href='alimento_perro.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='alimento_perro.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 2 -->
+                <!-- Product 2 -->
                 <div class="product-item">
-                    <img src="IMG/Arena para gato.png" alt="Arena para Gato">
-                    <p>Arena para Gato Sin Aroma 10kg</p>
+                    <img src="..//IMG/Arena para gato.png" alt="Cat Litter">
+                    <p>Unscented Cat Litter 10kg</p>
                     <p class="price">$12.99</p>
-                    <button class="btn-buy" onclick="window.location.href='arena_gato.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='arena_gato.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 3 -->
+                <!-- Product 3 -->
                 <div class="product-item">
-                    <img src="IMG/juguete para perro.png" alt="Juguete para Mascotas">
-                    <p>Juguete de Peluche para Perros</p>
+                    <img src="..//IMG/juguete para perro.png" alt="Pet Toy">
+                    <p>Plush Toy for Dogs</p>
                     <p class="price">$8.50</p>
-                    <button class="btn-buy" onclick="window.location.href='juguete_perro.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='juguete_perro.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 4 -->
+                <!-- Product 4 -->
                 <div class="product-item">
-                    <img src="IMG/cama para perros.png" alt="Cama para Mascotas">
-                    <p>Cama Suave para Mascotas - Tamaño Mediano</p>
+                    <img src="..//IMG/cama para perros.png" alt="Pet Bed">
+                    <p>Soft Pet Bed - Medium Size</p>
                     <p class="price">$20.99</p>
-                    <button class="btn-buy" onclick="window.location.href='cama_mascota.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='cama_mascota.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 5 -->
+                <!-- Product 5 -->
                 <div class="product-item">
-                    <img src="IMG/collar para perro y gato.png" alt="Collar Antipulgas">
-                    <p>Collar Antipulgas para Perros y Gatos</p>
+                    <img src="..//IMG/collar para perro y gato.png" alt="Flea Collar">
+                    <p>Flea Collar for Dogs and Cats</p>
                     <p class="price">$14.99</p>
-                    <button class="btn-buy" onclick="window.location.href='collar_antipulgas.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='collar_antipulgas.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 6 -->
+                <!-- Product 6 -->
                 <div class="product-item">
-                    <img src="IMG/trasportadora de perritos.png" alt="Transportadora para Mascotas">
-                    <p>Transportadora para Mascotas Pequeñas</p>
+                    <img src="..//IMG/trasportadora de perritos.png" alt="Pet Carrier">
+                    <p>Pet Carrier for Small Pets</p>
                     <p class="price">$28.75</p>
-                    <button class="btn-buy" onclick="window.location.href='transportadora.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='transportadora.html'">Buy</button>
                 </div>
             </div>
         </section>
     </main>
-
+    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los datos del usuario del localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.nombre) {
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
+    </script>
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>

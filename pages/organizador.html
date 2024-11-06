@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organizador de Ropa Plegable - Detalles del Producto</title>
-    <link rel="stylesheet" href="CSS/product_detail.css">
-    <link rel="stylesheet" href="CSS/nav_bar.css">
+    <link rel="stylesheet" href="..//CSS/product_detail.css">
+    <link rel="stylesheet" href="..//CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <div class="top-nav">
-            <div class="left">
-                <img src="IMG/logo.jpg" alt="Logo" class="logo">
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar productos, marcas y más...">
-                <button><i class="fa fa-search"></i></button>
-            </div>
-            <div class="right">
-                <span class="account"><i class="fa fa-user"></i> Mi cuenta</span>
-                <button class="login-btn" onclick="window.location.href='Login.html'">Iniciar sesión</button>
-            </div>
+     <!-- Top navigation bar -->
+     <div class="top-nav">
+        <div class="left">
+            <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
         </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Products, brands and more...">
+            <button><i class="fa fa-search"></i></button>
+        </div>
+        <div class="right">
+            <span class="account"><i class="fa fa-user"></i> Account:</span>
+            <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+            <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+        </div>
+        
+    </div>
+
     </header>
 
     <main>
@@ -65,6 +69,20 @@
             alert("Redirigiendo a la página de pago...");
             window.location.href = "pago.html";
         }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
+        }
+    });
+    
     </script>
 </body>
 </html>
