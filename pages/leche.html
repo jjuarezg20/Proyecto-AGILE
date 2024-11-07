@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member's Selection Leche Semidescremada - Detalles del Producto</title>
+    <link rel="stylesheet" href="..//CSS/product_detail.css">
+    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+        <!-- Top navigation bar -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Products, brands and more...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+            </div>
+            
+        </div>
+
+    </header>
+
+    <main>
+        <section class="product-details">
+            <button onclick="window.history.back()" class="btn-back">Back</button>
+            <div class="product-info">
+                <img src="..//IMG/Leche.png" alt="Member's Selection Semi-Skimmed Milk" class="product-image">
+                <div class="product-description">
+                    <h1>Member's Selection Semi-Skimmed Milk 12 Units / 1 L / 33.81 oz</h1>
+                    <p class="item-number">Item Number: 789103</p>
+                    <p class="description-text">High-quality semi-skimmed milk, ideal for daily consumption and a balanced diet.</p>
+    
+                    <div class="membership-prices">
+                        <h3>Prices by Membership:</h3>
+                        <ul>
+                            <li>Regular Price: <span class="price">$16.29</span></li>
+                            <li>Diamond Membership Price: <span class="price">$15.99</span></li>
+                            <li>Platinum Membership Price: <span class="price">$15.49</span></li>
+                            <li>Business Membership Price: <span class="price">$15.00</span></li>
+                            <li>Business Platinum Membership Price: <span class="price">$14.75</span></li>
+                        </ul>
+                    </div>
+    
+                    <div class="quantity-section">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
+                    </div>
+    
+                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2024 My Store. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function makePurchase() {
+            alert("Redirigiendo a la página de pago...");
+            window.location.href = "pago.html";
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>

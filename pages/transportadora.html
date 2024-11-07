@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportadora para Mascotas Pequeñas - Detalles del Producto</title>
+    <link rel="stylesheet" href="..//CSS/product_detail.css">
+    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+</head>
+<body>
+    <header>
+ <!-- Top navigation bar -->
+ <div class="top-nav">
+    <div class="left">
+        <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for Products, brands and more...">
+        <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="right">
+        <span class="account"><i class="fa fa-user"></i> Account:</span>
+        <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+        <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+    </div>
+    
+</div>
+
+    </header>
+
+    <main>
+        <section class="product-details">
+            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+            <div class="product-info">
+                <img src="..//IMG/trasportadora de perritos.png" alt="Transportadora para Mascotas Pequeñas" class="product-image">
+                <div class="product-description">
+                    <h1>Transportadora para Mascotas Pequeñas</h1>
+                    <p class="item-number">Número de artículo: 789406</p>
+                    <p class="description-text">Transportadora cómoda y segura para mascotas pequeñas, ideal para viajes y visitas al veterinario.</p>
+
+                    <div class="membership-prices">
+                        <h3>Precios según membresía:</h3>
+                        <ul>
+                            <li>Precio regular: <span class="price">$28.75</span></li>
+                            <li>Precio con membresía Diamond: <span class="price">$27.50</span></li>
+                            <li>Precio con membresía Platinum: <span class="price">$27.00</span></li>
+                            <li>Precio con membresía Business: <span class="price">$26.50</span></li>
+                            <li>Precio con membresía Business Platinum: <span class="price">$26.00</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="quantity-section">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
+                    </div>
+
+                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function makePurchase() {
+            alert("Redirigiendo a la página de pago...");
+            window.location.href = "pago.html";
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>

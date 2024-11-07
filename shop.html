@@ -20,7 +20,8 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <button class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+                <span id="userDisplay" style="display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
             
         </div>
@@ -32,7 +33,6 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="Buy_Membership.html">Membership</a></li>
                 <li><a href="recent_purchases.html">Recent Purchases</a></li>
-                <li><a href="#">Credit Card</a></li>
                 <li><a href="paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
@@ -42,9 +42,9 @@
         <!-- Banner principal -->
         <section class="banner">
             <div class="banner-content">
-                <h1>¡Preparate para la Navidad!</h1>
-                <p>Encuentra los mejores accesorios navideños para decorar tu hogar</p>
-                <button onclick="window.location.href='productos_navidenos.html'">Ver Más</button>
+                <h1>Get Ready for Christmas!</h1>
+                <p>Find the best Christmas accessories to decorate your home</p>
+                <button onclick="window.location.href='pages/productos_navidenos.html'">See more</button>
             </div>
             <div class="banner-image"> 
                 <img src="IMG/banerNavideño.png" alt="Accesorios Navideños">
@@ -53,47 +53,47 @@
 
         <!-- Sección de categorías destacadas -->
         <section class="categories">
-            <h2>Categorías Destacadas</h2>
+            <h2>Categories</h2>
             <div class="category-grid">
                 <!-- Enlace a la página de Alimentos -->
                 <div class="category-item">
-                    <a href="alimentos.html">
+                    <a href="pages/alimentos.html">
                         <img src="IMG/Alimentos.png" alt="Alimentos">
-                        <p>Alimentos</p>
+                        <p>Food</p>
                     </a>
                 </div>
 
                 <!-- Enlace a la página de Hogar -->
                 <div class="category-item">
-                    <a href="hogar.html">
+                    <a href="pages/hogar.html">
                         <img src="IMG/hogar.png" alt="Hogar">
-                        <p>Hogar</p>
+                        <p>Home</p>
                     </a>
                 </div>
 
                 <!-- Otras categorías sin enlace -->
                 <div class="category-item">
-                    <a href="licor.html">
+                    <a href="pages/licor.html">
                     <img src="IMG/licor.png" alt="Licor, Cerveza y Vino">
-                    <p>Licor, Cerveza y Vino</p>
+                    <p>Liquor, Beer, and Wine</p>
                 </a>
                 </div>
                 <div class="category-item">
-                    <a href="salud.html">
+                    <a href="pages/salud.html">
                     <img src="IMG/Salud Belleza.png" alt="Salud y Belleza">
-                    <p>Salud y Belleza</p>
+                    <p>Health and Beauty</p>
                 </a>
                 </div>
                 <div class="category-item">
-                    <a href="bebe.html">
+                    <a href="pages/bebe.html">
                     <img src="IMG/bebe.png" alt="Bebé">
-                    <p>Bebé</p>
+                    <p>Baby</p>
                 </a>
                 </div>
                 <div class="category-item">
-                    <a href="mascotas.html">
+                    <a href="pages/mascotas.html">
                     <img src="IMG/mascotas.png" alt="Mascotas">
-                    <p>Mascotas</p>
+                    <p>Pets</p>
                 </a>
                 </div>
             </div>
@@ -101,43 +101,43 @@
 
         <!-- Sección de productos destacados -->
         <section class="products">
-            <h2>Productos Destacados</h2>
+            <h2>Featured Products</h2>
             <div class="product-grid">
                 <div class="product-item">
                     <img src="IMG/Bocionajbl.png" alt="Bocina JBL Charge 5">
-                    <p>JBL Bocina JBL Charge 5 40Watts</p>
+                    <p>JBL Speaker Charge 5 40Watts</p>
                     <p class="price">$49.99</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/bocina_jbl.html'">Comprar</button>
                 </div>
                 <div class="product-item">
                     <img src="IMG/SecadoraDyson.png" alt="Secadora Dyson">
-                    <p>Secadora de cabello Dyson SuperSonic gold/blue</p>
+                    <p>Dyson SuperSonic gold/blue</p>
                     <p class="price">$625.99</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/secadora_dyson.html'">Comprar</button>
                 </div>
                 <div class="product-item">
                     <img src="IMG/Ps5.png" alt="PlayStation 5">
                     <p>PlayStation®5 console</p>
                     <p class="price">$444.99</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/ps5.html'">Comprar</button>
                 </div>
                 <div class="product-item">
                     <img src="IMG/leggins.jpg" alt="Leggins CRZ YOGA">
                     <p>CRZ YOGA Butterluxe High Waisted Lounge Legging 25"</p>
                     <p class="price">$14.99</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/leggins.html'">Comprar</button>
                 </div>
                 <div class="product-item">
                     <img src="IMG/onedirection.jpg" alt="Cepillo One Direction">
                     <p>One Direction Singing Battery Powered Tooth Brush</p>
                     <p class="price">$9.99</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/cepillo_dientes.html'">Comprar</button>
                 </div>
                 <div class="product-item">
                     <img src="IMG/colageno.jpg" alt="Colágeno en Polvo">
                     <p>Micro Ingredients Multi Collagen Protein Powder, 2 Pounds</p>
                     <p class="price">$30.60</p>
-                    <button class="btn-buy" onclick="redirectToPayment()">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='pages/colageno.html'">Comprar</button>
                 </div>
             </div>
         </section>
@@ -151,6 +151,18 @@
         function redirectToPayment() {
             window.location.href = 'pago.html';
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
+        }
+    });
     </script>
 </body>
 </html>
