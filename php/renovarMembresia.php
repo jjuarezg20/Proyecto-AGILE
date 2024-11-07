@@ -1,9 +1,9 @@
 <?php
 // Configuración de la conexión a la base de datos
 $servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "membershipDataBase";
+$username = "root";
+$password = "";
+$dbname = "membershipdataBase";
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
