@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bebé - Tienda</title>
-    <link rel="stylesheet" href="..//CSS/shop.css">
-    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+    <link rel="stylesheet" href="../CSS/shop.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
         <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
@@ -20,34 +20,34 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
                 <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
             </div>
-            
         </div>
-
-        <!-- Bottom navigation bar -->
 
         <!-- Bottom navigation bar -->
         <nav class="bottom-nav">
             <ul>
-                <li><a href="..//index.html">Home</a></li>
-                <li><a href="..//shop.html">Shop</a></li>
-                <li><a href="..//Buy_Membership.html">Membership</a></li>
-                <li><a href="..//recent_purchases.html">Recent Purchases</a></li>
-                <li><a href="..//paginaPersonal.html">My Account</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../shop.html">Shop</a></li>
+                <li><a href="../Buy_Membership.html">Membership</a></li>
+                <li><a href="../recent_purchases.html">Recent Purchases</a></li>
+                <li><a href="../paginaPersonal.html">My Account</a></li>
             </ul>
         </nav>
-
     </header>
+
     <main>
+        <!-- Botón Atrás -->
+        <button onclick="goBack()" class="btn-back">Back</button>
+
         <!-- Title and Baby Products Section -->
         <section class="products">
             <h2>Baby Products</h2>
             <div class="product-grid">
                 <!-- Product 1 -->
                 <div class="product-item">
-                    <img src="..//IMG/Pañales Huggies.png" alt="Diapers">
+                    <img src="../IMG/Pañales Huggies.png" alt="Diapers">
                     <p>Disposable Diapers Size M (120 pieces)</p>
                     <p class="price">$22.99</p>
                     <button class="btn-buy" onclick="window.location.href='pañales.html'">Buy</button>
@@ -55,7 +55,7 @@
                 
                 <!-- Product 2 -->
                 <div class="product-item">
-                    <img src="..//IMG/Toalla Humedad.png" alt="Wet Wipes">
+                    <img src="../IMG/Toalla Humedad.png" alt="Wet Wipes">
                     <p>Wet Wipes for Babies (500 units)</p>
                     <p class="price">$15.50</p>
                     <button class="btn-buy" onclick="window.location.href='toallitas.html'">Buy</button>
@@ -63,7 +63,7 @@
                 
                 <!-- Product 3 -->
                 <div class="product-item">
-                    <img src="..//IMG/Sonajero.png" alt="Educational Toy">
+                    <img src="../IMG/Sonajero.png" alt="Educational Toy">
                     <p>Educational Toy for Baby - Rattle</p>
                     <p class="price">$8.99</p>
                     <button class="btn-buy" onclick="window.location.href='sonajero.html'">Buy</button>
@@ -71,7 +71,7 @@
                 
                 <!-- Product 4 -->
                 <div class="product-item">
-                    <img src="..//IMG/Biberón.png" alt="Anti-Colic Bottle">
+                    <img src="../IMG/Biberón.png" alt="Anti-Colic Bottle">
                     <p>Anti-Colic Bottle 250ml</p>
                     <p class="price">$12.00</p>
                     <button class="btn-buy" onclick="window.location.href='biberon.html'">Buy</button>
@@ -79,7 +79,7 @@
                 
                 <!-- Product 5 -->
                 <div class="product-item">
-                    <img src="..//IMG/shampooDeBebe.png" alt="Baby Shampoo">
+                    <img src="../IMG/shampooDeBebe.png" alt="Baby Shampoo">
                     <p>Gentle Baby Shampoo 500ml</p>
                     <p class="price">$7.50</p>
                     <button class="btn-buy" onclick="window.location.href='shampoo_bebe.html'">Buy</button>
@@ -87,7 +87,7 @@
                 
                 <!-- Product 6 -->
                 <div class="product-item">
-                    <img src="..//IMG/Crema para pañalitos.png" alt="Diaper Cream">
+                    <img src="../IMG/Crema para pañalitos.png" alt="Diaper Cream">
                     <p>Diaper Rash Cream 100g</p>
                     <p class="price">$5.75</p>
                     <button class="btn-buy" onclick="window.location.href='crema_pañalitis.html'">Buy</button>
@@ -96,20 +96,29 @@
         </section>
     </main>
     
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
+    <script>
+        // Función para el botón Atrás
+        function goBack() {
+            if (document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = '../shop.html';  // Redirige a la tienda si no hay historial
+            }
         }
-    });
-</script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los datos del usuario del localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.nombre) {
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
+    </script>
+    
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>

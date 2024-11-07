@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayStation®5 console - Detalles del Producto</title>
-    <link rel="stylesheet" href="..//CSS/product_detail.css">
-    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+    <title>PlayStation®5 Console - Detalles del Producto</title>
+    <link rel="stylesheet" href="../CSS/product_detail.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
- <!-- Top navigation bar -->
- <div class="top-nav">
-    <div class="left">
-        <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
-    </div>
-    <div class="search-bar">
-        <input type="text" placeholder="Search for Products, brands and more...">
-        <button><i class="fa fa-search"></i></button>
-    </div>
-    <div class="right">
-        <span class="account"><i class="fa fa-user"></i> Account:</span>
-        <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
-        <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
-    </div>
-    
-</div>
-
+        <!-- Barra de navegación superior -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Cuenta:</span>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Iniciar sesión</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+            <button onclick="goBack()" class="btn-back">Atrás</button>
             <div class="product-info">
-                <img src="IMG/Ps5.png" alt="PlayStation®5 console" class="product-image">
+                <img src="../IMG/Ps5.png" alt="PlayStation®5 console" class="product-image">
                 <div class="product-description">
-                    <h1>PlayStation®5 console</h1>
+                    <h1>PlayStation®5 Console</h1>
                     <p class="item-number">Número de artículo: 789503</p>
                     <p class="description-text">La última consola de Sony, PlayStation®5, ofrece una experiencia de juego increíble con gráficos de última generación y rendimiento rápido.</p>
 
@@ -67,21 +65,27 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
-            window.location.href = "pago.html";
+            window.location.href = "../pago.html"; // Ruta ajustada
         }
 
-        
-        document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
+        function goBack() {
+            // Función para regresar en el historial de navegación
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html"; // Redirige a la página de inicio si no hay historial
+            }
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

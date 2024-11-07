@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organizador de Ropa Plegable - Detalles del Producto</title>
-    <link rel="stylesheet" href="..//CSS/product_detail.css">
-    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+    <link rel="stylesheet" href="../CSS/product_detail.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
-     <!-- Top navigation bar -->
-     <div class="top-nav">
-        <div class="left">
-            <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+        <!-- Top navigation bar -->
+        <div class="top-nav">
+            <div class="left">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Products, brands and more...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="right">
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Login</button>
+            </div>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for Products, brands and more...">
-            <button><i class="fa fa-search"></i></button>
-        </div>
-        <div class="right">
-            <span class="account"><i class="fa fa-user"></i> Account:</span>
-            <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
-            <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
-        </div>
-        
-    </div>
-
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+            <button onclick="goBack()" class="btn-back">Atrás</button>
             <div class="product-info">
-                <img src="IMG/Organizador de Ropa.png" alt="Organizador de Ropa Plegable" class="product-image">
+                <img src="../IMG/Organizador de Ropa.png" alt="Organizador de Ropa Plegable" class="product-image">
                 <div class="product-description">
                     <h1>Organizador de Ropa Plegable</h1>
                     <p class="item-number">Número de artículo: 789107</p>
@@ -67,22 +65,29 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
-            window.location.href = "pago.html";
+            window.location.href = "../pago.html";
         }
 
+        function goBack() {
+            // Intenta retroceder en el historial del navegador
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html"; // Página principal si no hay historial
+            }
+        }
         
         document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
-        }
-    });
-    
+            // Obtener datos del usuario del localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.nombre) {
+                // Mostrar nombre del usuario y ocultar el botón de login si está logueado
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
