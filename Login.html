@@ -12,7 +12,7 @@
         <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
@@ -41,47 +41,26 @@
             <img src="IMG/logo_login.jpg" alt="Membresía" class="membresia-img">
             <h2>Member's Club</h2>
             <p class="login-description">Log in to get the most from your membership</p>
-            <form action="#" method="post">
+            <form action="./php/login.php" method="post">
                 <div class="input-group">
-                    <label for="nombre">Name</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="email">Membership name or email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <!-- Campo de contraseña -->
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn-login">Log In</button>
             </form>
+                
             <p class="not-a-member">Not a Member?</p>
             <a href="Buy_Membership.html" class="btn-buy-membership">Buy Membership</a>
             <button type="button" class="btn-cancel" onclick="window.location.href='index.html'">Cancel</button>
         </div>
     </div>
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nombre = document.getElementById('nombre').value;
-            const password = document.getElementById('password').value;
-            
-            // Obtener los datos del usuario almacenados
-            const userData = JSON.parse(localStorage.getItem('userData'));
-            
-            if (userData && userData.nombre === nombre && userData.password === password) {
-                alert('Login successful!');
-                window.location.href = 'paginaPersonal.html';
-            } else {
-                alert('Invalid name or password');
-            }
-        });
-    </script>
+
     <footer class="footer">
         <p>&copy; 2024 Members Club. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
-
     </footer>
 </body>
 </html>

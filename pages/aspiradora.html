@@ -76,6 +76,7 @@
         // Función para el botón Hacer compra con verificación de rutas alternativas
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+
             const possibleUrls = [
                 "../pages/pago.html",  // Ruta relativa a la carpeta actual
                 "/pages/pago.html",    // Ruta absoluta desde la raíz del servidor
@@ -98,8 +99,10 @@
                 }
                 alert("No se pudo encontrar la página de pago en ninguna ubicación conocida.");
             })();
-        }
 
+            window.location.href = "..//pago.html";
+
+        }
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener los datos del usuario del localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));

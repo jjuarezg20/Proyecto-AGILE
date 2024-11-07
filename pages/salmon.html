@@ -74,6 +74,18 @@
             } else {
                 window.location.href = "../index.html"; // Ruta ajustada para la página de inicio
             }
+            window.location.href = "..//pago.html";
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Obtener los datos del usuario del localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        
+        if (userData && userData.nombre) {
+            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+            document.getElementById('userDisplay').textContent = userData.nombre;
+            document.getElementById('userDisplay').style.display = 'inline';
+            document.getElementById('loginButton').style.display = 'none';
         }
 
         document.addEventListener('DOMContentLoaded', function() {
