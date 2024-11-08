@@ -128,6 +128,28 @@
     </section>
 
     <script>
+
+document.getElementById('submitBtn').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        
+        // Obtener todos los valores
+        const userData = {
+            nombre: document.getElementById('firstName').value,
+            apellido: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            telefono: document.getElementById('phoneNumber').value,
+            id: document.getElementById('idNumber').value,
+            membresia: document.getElementById('club').value // Añadimos la membresía
+        };
+        
+        // Guardar todos los datos en localStorage
+        localStorage.setItem('userData', JSON.stringify(userData));
+        
+        alert('Usuario creado exitosamente');
+        window.location.href = 'paginaPersonal.html';
+
+        });
+        
 document.getElementById("combinedForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
