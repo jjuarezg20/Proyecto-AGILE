@@ -90,10 +90,33 @@
 
 
         function makePurchase() {
-                    alert("Redirigiendo a la página de pago...");
-                    window.location.href = "..//pago.html";
-                }
-                
+            // Obtener los datos del producto
+            const productName = document.querySelector('.product-description h1').textContent;
+            const productPrice = document.querySelector('.membership-prices .price').textContent;
+            const quantity = document.getElementById('quantity').value;
+
+            // Crear objeto de compra
+            const purchase = {
+                productName: productName,
+                quantity: quantity,
+                totalPrice: (parseFloat(productPrice.replace('$', '')) * parseInt(quantity)).toFixed(2),
+                date: new Date().toLocaleDateString()
+            };
+
+            // Obtener compras existentes del localStorage
+            const purchases = JSON.parse(localStorage.getItem('recentPurchases')) || [];
+            
+            // Añadir nueva compra
+            purchases.push(purchase);
+            
+            // Guardar en localStorage
+            localStorage.setItem('recentPurchases', JSON.stringify(purchases));
+
+            // Redirigir a página de pago
+            alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
                 // Obtener los datos del usuario del localStorage
                 const userData = JSON.parse(localStorage.getItem('userData'));

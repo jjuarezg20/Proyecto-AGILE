@@ -62,24 +62,21 @@
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
 
+
     <script>
-        
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
-
-            window.location.href = "../pago.html";  // Ajusta la ruta según la ubicación del archivo
+            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
         }
 
         function goBack() {
-            // Intenta regresar en el historial, si no hay historial redirige a la página principal
+            // Si hay historial, intenta regresar
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+                // Si no hay historial, redirige a una página específica (inicio o productos)
+                window.location.href = "../shop.html";  // Ajusta esta ruta según sea necesario
             }
-
-            window.location.href = "..//pago.html";
-
         }
 
         document.addEventListener('DOMContentLoaded', function() {

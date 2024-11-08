@@ -40,74 +40,84 @@
 
 
     <main>
-        <!-- Título y sección de productos de la categoría Licor, Cerveza y Vino -->
+        <button onclick="goBack()" class="btn-back">Back</button>
+        <!-- Title and product section for the Liquor, Beer, and Wine category -->
         <section class="products">
-            <h2>Productos de Licor, Cerveza y Vino</h2>
+            <h2>Liquor, Beer, and Wine Products</h2>
             <div class="product-grid">
-                <!-- Producto 1 -->
+                <!-- Product 1 -->
                 <div class="product-item">
-                    <img src="..//IMG/Vino.png" alt="Vino Tinto">
-                    <p>Vino Tinto Reserva Especial</p>
+                    <img src="../IMG/Vino.png" alt="Red Wine">
+                    <p>Special Reserve Red Wine</p>
                     <p class="price">$20.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
                 
-                <!-- Producto 2 -->
+                <!-- Product 2 -->
                 <div class="product-item">
-                    <img src="..//IMG/blue label.png" alt="Whisky">
-                    <p>johnnie walker blue label</p>
+                    <img src="../IMG/blue label.png" alt="Whiskey">
+                    <p>Johnnie Walker Blue Label</p>
                     <p class="price">$335.50</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
                 
-                <!-- Producto 3 -->
+                <!-- Product 3 -->
                 <div class="product-item">
-                    <img src="..//IMG/pilcener.png" alt="Cerveza Artesanal">
-                    <p>Cerveza Artesanal IPA 6 Pack</p>
+                    <img src="../IMG/pilcener.png" alt="Craft Beer">
+                    <p>Craft IPA Beer 6-Pack</p>
                     <p class="price">$12.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
                 
-                <!-- Producto 4 -->
+                <!-- Product 4 -->
                 <div class="product-item">
-                    <img src="..//IMG/Moet.png" alt="Champán">
-                    <p> Moet Champán Brut</p>
+                    <img src="../IMG/Moet.png" alt="Champagne">
+                    <p>Moet Brut Champagne</p>
                     <p class="price">$49.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
                 
-                <!-- Producto 5 -->
+                <!-- Product 5 -->
                 <div class="product-item">
-                    <img src="..//IMG/vodka .png" alt="Vodka Premium">
-                    <p>Vodka Premium 750ml</p>
+                    <img src="../IMG/vodka .png" alt="Premium Vodka">
+                    <p>Premium Vodka 750ml</p>
                     <p class="price">$22.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
                 
-                <!-- Producto 6 -->
+                <!-- Product 6 -->
                 <div class="product-item">
-                    <img src="..//IMG/Gran Malo.png" alt="Tequila Añejo">
-                    <p>Tequila Gran malo</p>
+                    <img src="../IMG/Gran Malo.png" alt="Añejo Tequila">
+                    <p>Gran Malo Tequila</p>
                     <p class="price">$45.99</p>
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy">Buy</button>
                 </div>
             </div>
         </section>
     </main>
+    
 
     <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
+        // Función personalizada para el botón Back
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '../shop.html'; // Redirige a la página de shop si no hay historial
+            }
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los datos del usuario del localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 
     <footer class="footer">

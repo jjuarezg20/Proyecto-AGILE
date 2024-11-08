@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hogar - Tienda</title>
+    <title>Home - Store</title>
     <link rel="stylesheet" href="../CSS/shop.css">
     <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
@@ -14,7 +14,7 @@
                 <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for Products, brands and more...">
+                <input type="text" placeholder="Search for Products, brands, and more...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="right">
@@ -40,54 +40,54 @@
         <button onclick="goBack()" class="btn-back">Back</button>
         
         <section class="products">
-            <h2>Productos de Hogar</h2>
+            <h2>Home Products</h2>
             <div class="product-grid">
-                <!-- Producto 1 -->
+                <!-- Product 1 -->
                 <div class="product-item">
-                    <img src="../IMG/Sabanas1.png" alt="Juego de Sábanas">
-                    <p>Juego de Sábanas Queen Size</p>
+                    <img src="../IMG/Sabanas1.png" alt="Sheet Set">
+                    <p>Queen Size Sheet Set</p>
                     <p class="price">$55.99</p>
-                    <button class="btn-buy" onclick="window.location.href='sabanas.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='sabanas.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 2 -->
+                <!-- Product 2 -->
                 <div class="product-item">
-                    <img src="../IMG/Vasos.png" alt="Set de Vasos">
-                    <p>Set de Vasos de Cristal (6 piezas)</p>
+                    <img src="../IMG/Vasos.png" alt="Glass Set">
+                    <p>Crystal Glass Set (6 pieces)</p>
                     <p class="price">$18.50</p>
-                    <button class="btn-buy" onclick="window.location.href='vasos.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='vasos.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 3 -->
+                <!-- Product 3 -->
                 <div class="product-item">
-                    <img src="../IMG/Organizador de Ropa.png" alt="Organizador de Ropa">
-                    <p>Organizador de Ropa Plegable</p>
+                    <img src="../IMG/Organizador de Ropa.png" alt="Clothing Organizer">
+                    <p>Foldable Clothing Organizer</p>
                     <p class="price">$12.99</p>
-                    <button class="btn-buy" onclick="window.location.href='organizador.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='organizador.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 4 -->
+                <!-- Product 4 -->
                 <div class="product-item">
-                    <img src="../IMG/Cafetera.png" alt="Cafetera">
-                    <p>Cafetera Eléctrica con Temporizador</p>
+                    <img src="../IMG/Cafetera.png" alt="Coffee Maker">
+                    <p>Electric Coffee Maker with Timer</p>
                     <p class="price">$135.99</p>
-                    <button class="btn-buy" onclick="window.location.href='cafetera.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='cafetera.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 5 -->
+                <!-- Product 5 -->
                 <div class="product-item">
-                    <img src="../IMG/LamparaLed.png" alt="Lámpara de Escritorio">
-                    <p>Lámpara de Escritorio LED Ajustable</p>
+                    <img src="../IMG/LamparaLed.png" alt="Desk Lamp">
+                    <p>Adjustable LED Desk Lamp</p>
                     <p class="price">$22.99</p>
-                    <button class="btn-buy" onclick="window.location.href='lampara.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='lampara.html'">Buy</button>
                 </div>
                 
-                <!-- Producto 6 -->
+                <!-- Product 6 -->
                 <div class="product-item">
-                    <img src="../IMG/Aspiradora.png" alt="Aspiradora">
-                    <p>Aspiradora Vertical sin Bolsa</p>
+                    <img src="../IMG/Aspiradora.png" alt="Vacuum Cleaner">
+                    <p>Bagless Upright Vacuum Cleaner</p>
                     <p class="price">$179.99</p>
-                    <button class="btn-buy" onclick="window.location.href='aspiradora.html'">Comprar</button>
+                    <button class="btn-buy" onclick="window.location.href='aspiradora.html'">Buy</button>
                 </div>
             </div>
         </section>
@@ -95,19 +95,19 @@
 
     <script>
         function goBack() {
-            // Intenta regresar en el historial, si no hay historial redirige a la página principal
+            // Try to go back in history; if no history, redirect to home
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+                window.location.href = "../index.html";  // Adjust path as necessary
             }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const userData = JSON.parse(localStorage.getItem('userData'));
             
-            if (userData && userData.nombre) {
-                document.getElementById('userDisplay').textContent = userData.nombre;
+            if (userData && userData.name) {
+                document.getElementById('userDisplay').textContent = userData.name;
                 document.getElementById('userDisplay').style.display = 'inline';
                 document.getElementById('loginButton').style.display = 'none';
             }
@@ -115,7 +115,7 @@
     </script>
 
     <footer class="footer">
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
     </footer>
 </body>
 </html>

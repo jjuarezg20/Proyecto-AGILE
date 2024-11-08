@@ -63,45 +63,24 @@
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
 
-        // Función para el botón Atrás con verificación de historial
+    <script>
+        function makePurchase() {
+            alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";
+        }
+
         function goBack() {
-            // Verifica si hay historial de navegación
             if (window.history.length > 1) {
-                window.history.back();  // Va a la página anterior en el historial
+                window.history.back();
             } else {
-                // Si no hay historial, redirige a una página específica, en este caso la tienda
-                window.location.href = '../shop.html';
+                window.location.href = "../shop.html";
             }
         }
-
-        // Función para el botón Hacer compra
-        function makePurchase() {
-            alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html";  // Ajusta si el archivo está en otra ubicación
-
-        function makePurchase() {
-            alert("Redirigiendo a la página de pago...");
-            window.location.href = "..//pago.html";
-        }
         
         document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
-
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener los datos del usuario del localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));
-
+            
             if (userData && userData.nombre) {
                 // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
                 document.getElementById('userDisplay').textContent = userData.nombre;

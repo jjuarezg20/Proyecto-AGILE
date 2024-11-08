@@ -28,7 +28,8 @@
     <main>
         <section class="product-details">
             <!-- Botón Atrás -->
-            <button onclick="goBack()" class="btn-back">Atrás</button>
+            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+
             <div class="product-info">
                 <img src="../IMG/Biberón.png" alt="Biberón Anti-Colic 250ml" class="product-image">
                 <div class="product-description">
@@ -62,25 +63,21 @@
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
 
+
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
-
-            window.location.href = "../pago.html";  // Ajusta la ruta según la ubicación del archivo
+            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
         }
 
         function goBack() {
-            // Verifica si hay historial de navegación
-            if (document.referrer) {
-                // Si el navegador tiene una página anterior, regresa a ella
-                window.location.href = document.referrer;
+            // Si hay historial, intenta regresar
+            if (window.history.length > 1) {
+                window.history.back();
             } else {
-                // Si no hay historial, redirige a la página principal
-                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+                // Si no hay historial, redirige a una página específica (inicio o productos)
+                window.location.href = "../shop.html";  // Ajusta esta ruta según sea necesario
             }
-
-            window.location.href = "..//pago.html";
-
         }
 
         document.addEventListener('DOMContentLoaded', function() {

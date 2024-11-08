@@ -39,17 +39,12 @@
     </header>
 
     <main>
+        <button onclick="goBack()" class="btn-back">Atrás</button>
         <!-- Title and Pet Products Section -->
         <section class="products">
             <h2>Pet Products</h2>
             <div class="product-grid">
-                <!-- Product 1 -->
-                <div class="product-item">
-                    <img src="..//IMG/comida de perro.png" alt="Dog Food">
-                    <p>Premium Dog Food for Adult Dogs 15kg</p>
-                    <p class="price">$35.99</p>
-                    <button class="btn-buy" onclick="window.location.href='alimento_perro.html'">Buy</button>
-                </div>
+
                 
                 <!-- Product 2 -->
                 <div class="product-item">
@@ -90,16 +85,32 @@
                     <p class="price">$28.75</p>
                     <button class="btn-buy" onclick="window.location.href='transportadora.html'">Buy</button>
                 </div>
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <img src="..//IMG/comida de perro.png" alt="Dog Food">
+                    <p>Premium Dog Food for Adult Dogs 15kg</p>
+                    <p class="price">$35.99</p>
+                    <button class="btn-buy" onclick="window.location.href='alimento_perro.html'">Buy</button>
+                </div>
             </div>
         </section>
     </main>
     
+
     <script>
-        
+        // Función personalizada para el botón Back
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '../shop.html'; // Redirige a la página de shop si no hay historial
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener los datos del usuario del localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));
-            
+
             if (userData && userData.nombre) {
                 // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
                 document.getElementById('userDisplay').textContent = userData.nombre;
@@ -108,6 +119,7 @@
             }
         });
     </script>
+
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>

@@ -1,0 +1,134 @@
+/* CSS para recent_purchases.html */
+
+:root {
+    --uno: #121b28;        /* Color oscuro */
+    --dos: #1f2638;       /* Color más oscuro */
+    --tres: #4a5873;      /* Color intermedio */
+    --cuatro: #7e8ba4;    /* Color claro */
+    --cinco: #e0e1dd;     /* Color muy claro */
+    --seis: white;        /* Blanco */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cinco);
+    margin: 0;
+    padding: 0;
+    color: var(--uno);
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--seis);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--dos);
+    text-align: center;
+    border-bottom: 2px solid var(--dos);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.purchases-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#purchases-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+#purchases-table thead {
+    background-color: var(--uno);
+    color: var(--seis);
+}
+
+#purchases-table th, 
+#purchases-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cuatro);
+}
+
+#purchases-table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#purchases-table tbody tr:nth-child(even) {
+    background-color: var(--cinco);
+}
+
+#purchases-table tbody tr:hover {
+    background-color: var(--tres);
+    transition: background-color 0.3s ease;
+}
+
+#no-purchases-message {
+    text-align: center;
+    color: var(--dos);
+    background-color: var(--cuatro);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.clear-purchases-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: var(--uno);
+    color: var(--seis);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.clear-purchases-btn:hover {
+    background-color: var(--dos);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #purchases-table {
+        font-size: 0.9em;
+    }
+
+    #purchases-table th, 
+    #purchases-table td {
+        padding: 8px;
+    }
+}
+
+/* Estilos para detalles adicionales */
+.purchase-details {
+    display: flex;
+    align-items: center;
+}
+
+.purchase-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-info span {
+    font-size: 0.9em;
+    color: var(--cuatro);
+}

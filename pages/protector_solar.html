@@ -69,30 +69,18 @@
         }
 
         function goBack() {
-            // Verifica si hay historial de navegación
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html";  // Redirige al inicio si no hay historial
+                window.location.href = "../shop.html";
             }
-            window.location.href = "..//pago.html";
         }
         
-        document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             const userData = JSON.parse(localStorage.getItem('userData'));
-
+            
             if (userData && userData.nombre) {
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
                 document.getElementById('userDisplay').textContent = userData.nombre;
                 document.getElementById('userDisplay').style.display = 'inline';
                 document.getElementById('loginButton').style.display = 'none';

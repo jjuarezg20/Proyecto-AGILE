@@ -38,6 +38,7 @@
         </nav>
     </header>
     <main>
+        <button onclick="goBack()" class="btn-back">Back</button>
         <!-- Title and Health & Beauty Products Section -->
         <section class="products">
             <h2>Health and Beauty Products</h2>
@@ -95,19 +96,28 @@
     
 
     <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
+        // Función personalizada para el botón Back
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '../shop.html'; // Redirige a la página de shop si no hay historial
+            }
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener los datos del usuario del localStorage
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
+
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>

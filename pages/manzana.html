@@ -64,18 +64,17 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html";
+            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
         }
 
         function goBack() {
+            // Si hay historial, intenta regresar
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html";
+                // Si no hay historial, redirige a una página específica (inicio o productos)
+                window.location.href = "../shop.html";  // Ajusta esta ruta según sea necesario
             }
-        }
-
-            window.location.href = "..//pago.html";
         }
         
         document.addEventListener('DOMContentLoaded', function() {

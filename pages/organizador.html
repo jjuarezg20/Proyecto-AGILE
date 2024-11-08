@@ -61,48 +61,30 @@
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
-
     <script>
-          function makePurchase() {
+        function makePurchase() {
             alert("Redirigiendo a la página de pago...");
             window.location.href = "../pago.html";
         }
 
         function goBack() {
-            // Intenta retroceder en el historial del navegador
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html"; // Página principal si no hay historial
+                window.location.href = "../shop.html";
             }
         }
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtener datos del usuario del localStorage
             const userData = JSON.parse(localStorage.getItem('userData'));
             
             if (userData && userData.nombre) {
-                // Mostrar nombre del usuario y ocultar el botón de login si está logueado
+                // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
                 document.getElementById('userDisplay').textContent = userData.nombre;
                 document.getElementById('userDisplay').style.display = 'inline';
                 document.getElementById('loginButton').style.display = 'none';
             }
         });
-            window.location.href = "..//pago.html";
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
-        }
-    });
-
     </script>
 </body>
 </html>
