@@ -65,16 +65,40 @@
 
     <script>
         function makePurchase() {
+            // Obtener detalles del producto
+            const productName = document.querySelector('.product-description h1').textContent;
+            const productPrice = document.querySelector('.membership-prices .price').textContent;
+            const quantity = document.getElementById('quantity').value;
+
+            // Crear objeto de compra
+            const purchase = {
+                productName: productName,
+                quantity: quantity,
+                totalPrice: (parseFloat(productPrice.replace('$', '')) * parseInt(quantity)).toFixed(2),
+                date: new Date().toLocaleDateString()
+            };
+
+            // Obtener compras recientes del localStorage
+            const purchases = JSON.parse(localStorage.getItem('recentPurchases')) || [];
+
+            // Verificar si el producto ya existe en las compras recientes
+            const existingPurchaseIndex = purchases.findIndex(item => item.productName === productName);
+
+            if (existingPurchaseIndex !== -1) {
+                // Si el producto ya existe, actualizar la cantidad
+                purchases[existingPurchaseIndex].quantity = (parseInt(purchases[existingPurchaseIndex].quantity) + parseInt(quantity)).toString();
+                purchases[existingPurchaseIndex].totalPrice = (parseFloat(purchases[existingPurchaseIndex].totalPrice) + parseFloat(purchase.totalPrice)).toFixed(2);
+            } else {
+                // Si no existe, agregar la nueva compra
+                purchases.push(purchase);
+            }
+
+            // Guardar en localStorage
+            localStorage.setItem('recentPurchases', JSON.stringify(purchases));
+
+            // Redirigir a la página de pago
             alert("Redirigiendo a la página de pago...");
             window.location.href = "../pago.html";
-        }
-
-        function goBack() {
-            if (window.history.length > 1) {
-                window.history.back();
-            } else {
-                window.location.href = "../shop.html";
-            }
         }
         
         document.addEventListener('DOMContentLoaded', function() {

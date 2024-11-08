@@ -44,9 +44,9 @@
             <!-- Resumen del pedido -->
             <section class="order-summary">
                 <h2>Resumen del Pedido</h2>
-                <p>Producto: <span id="product-name">Producto Ejemplo</span></p>
-                <p>Cantidad: <span id="product-quantity">1</span></p>
-                <p>Precio total: <span id="product-price">$10.00</span></p>
+                <p>Producto: <span id="product-name"></span></p>
+                <p>Cantidad: <span id="product-quantity"></span></p>
+                <p>Precio total: <span id="product-price"></span></p>
             </section>
 
             <!-- Información de envío -->
@@ -91,44 +91,6 @@
     <footer class="footer">
         <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
     </footer>
-
-    <script>
-        function confirmPayment() {
-            const productName = document.getElementById("product-name").textContent;
-            const quantity = parseInt(document.getElementById("product-quantity").textContent);
-            const totalPrice = document.getElementById("product-price").textContent;
-
-            // Obtener los datos de envío
-            const address = document.getElementById("address").value;
-            const city = document.getElementById("city").value;
-            const postalCode = document.getElementById("postal-code").value;
-            const country = document.getElementById("country").value;
-
-            // Crear objeto de compra con la información de envío
-            const purchase = {
-                productName: productName,
-                quantity: quantity,
-                totalPrice: totalPrice,
-                date: new Date().toLocaleDateString(),
-                shippingInfo: {
-                    address: address,
-                    city: city,
-                    postalCode: postalCode,
-                    country: country
-                }
-            };
-
-            // Guardar en localStorage
-            const purchases = JSON.parse(localStorage.getItem("recentPurchases")) || [];
-            purchases.push(purchase);
-            localStorage.setItem("recentPurchases", JSON.stringify(purchases));
-
-            alert("Pago confirmado. Gracias por su compra.");
-            window.location.href = "shop.html"; // Redirige a la página de inicio
-        }
-    </script>
-
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

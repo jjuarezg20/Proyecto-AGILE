@@ -1,80 +1,79 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayStation®5 Console - Detalles del Producto</title>
+    <title>PlayStation®5 Console - Product Details</title>
     <link rel="stylesheet" href="../CSS/product_detail.css">
     <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <!-- Barra de navegación superior -->
+        <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
                 <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar productos, marcas y más...">
+                <input type="text" placeholder="Search products, brands, and more...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="right">
-                <span class="account"><i class="fa fa-user"></i> Cuenta:</span>
+                <span class="account"><i class="fa fa-user"></i> Account:</span>
                 <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
-                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Iniciar sesión</button>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Log in</button>
             </div>
         </div>
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="goBack()" class="btn-back">Atrás</button>
+            <button onclick="goBack()" class="btn-back">Back</button>
             <div class="product-info">
                 <img src="../IMG/Ps5.png" alt="PlayStation®5 console" class="product-image">
                 <div class="product-description">
                     <h1>PlayStation®5 Console</h1>
-                    <p class="item-number">Número de artículo: 789503</p>
-                    <p class="description-text">La última consola de Sony, PlayStation®5, ofrece una experiencia de juego increíble con gráficos de última generación y rendimiento rápido.</p>
+                    <p class="item-number">Item number: 789503</p>
+                    <p class="description-text">Sony's latest console, PlayStation®5, offers an incredible gaming experience with next-generation graphics and fast performance.</p>
 
                     <div class="membership-prices">
-                        <h3>Precios según membresía:</h3>
+                        <h3>Prices by membership:</h3>
                         <ul>
-                            <li>Precio regular: <span class="price">$444.99</span></li>
-                            <li>Precio con membresía Diamond: <span class="price">$429.50</span></li>
-                            <li>Precio con membresía Platinum: <span class="price">$424.99</span></li>
-                            <li>Precio con membresía Business: <span class="price">$419.50</span></li>
-                            <li>Precio con membresía Business Platinum: <span class="price">$414.99</span></li>
+                            <li>Regular price: <span class="price">$444.99</span></li>
+                            <li>Diamond membership price: <span class="price">$429.50</span></li>
+                            <li>Platinum membership price: <span class="price">$424.99</span></li>
+                            <li>Business membership price: <span class="price">$419.50</span></li>
+                            <li>Business Platinum membership price: <span class="price">$414.99</span></li>
                         </ul>
                     </div>
 
                     <div class="quantity-section">
-                        <label for="quantity">Cantidad:</label>
+                        <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
                     </div>
 
-                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
+                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
     </footer>
 
     <script>
         function makePurchase() {
-            alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html"; // Ruta ajustada
-            window.location.href = "..//pago.html";
+            alert("Redirecting to the payment page...");
+            window.location.href = "../pago.html"; // Adjusted path
         }
 
         function goBack() {
-            // Función para regresar en el historial de navegación
+            // Function to go back in the navigation history
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html"; // Redirige a la página de inicio si no hay historial
+                window.location.href = "../index.html"; // Redirects to the homepage if there is no history
             }
         }
 

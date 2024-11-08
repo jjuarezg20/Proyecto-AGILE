@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bocina JBL Charge 5 40Watts - Detalles del Producto</title>
+    <title>JBL Charge 5 Speaker 40Watts - Product Details</title>
     <link rel="stylesheet" href="../CSS/product_detail.css">
     <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
@@ -27,55 +27,87 @@
 
     <main>
         <section class="product-details">
-            <!-- Botón Atrás -->
-            <button onclick="goBack()" class="btn-back">Atrás</button>
+            <!-- Back Button -->
+            <button onclick="goBack()" class="btn-back">Back</button>
             <div class="product-info">
-                <img src="../IMG/Bocionajbl.png" alt="Bocina JBL Charge 5" class="product-image">
+                <img src="../IMG/Bocionajbl.png" alt="JBL Charge 5 Speaker" class="product-image">
                 <div class="product-description">
-                    <h1>Bocina JBL Charge 5 40Watts</h1>
-                    <p class="item-number">Número de artículo: 789501</p>
-                    <p class="description-text">Bocina portátil JBL Charge 5 con sonido potente de 40W, resistente al agua y batería de larga duración.</p>
+                    <h1>JBL Charge 5 Speaker 40Watts</h1>
+                    <p class="item-number">Item number: 789501</p>
+                    <p class="description-text">JBL Charge 5 portable speaker with powerful 40W sound, waterproof, and long-lasting battery.</p>
 
                     <div class="membership-prices">
-                        <h3>Precios según membresía:</h3>
+                        <h3>Prices by membership:</h3>
                         <ul>
-                            <li>Precio regular: <span class="price">$49.99</span></li>
-                            <li>Precio con membresía Diamond: <span class="price">$47.50</span></li>
-                            <li>Precio con membresía Platinum: <span class="price">$46.99</span></li>
-                            <li>Precio con membresía Business: <span class="price">$45.50</span></li>
-                            <li>Precio con membresía Business Platinum: <span class="price">$44.99</span></li>
+                            <li>Regular price: <span class="price">$49.99</span></li>
+                            <li>Diamond membership price: <span class="price">$47.50</span></li>
+                            <li>Platinum membership price: <span class="price">$46.99</span></li>
+                            <li>Business membership price: <span class="price">$45.50</span></li>
+                            <li>Business Platinum membership price: <span class="price">$44.99</span></li>
                         </ul>
                     </div>
 
                     <div class="quantity-section">
-                        <label for="quantity">Cantidad:</label>
+                        <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
                     </div>
 
-                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
+                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
     </footer>
 
 
     <script>
         function makePurchase() {
+            // Obtener detalles del producto
+            const productName = document.querySelector('.product-description h1').textContent;
+            const productPrice = document.querySelector('.membership-prices .price').textContent;
+            const quantity = document.getElementById('quantity').value;
+
+            // Crear objeto de compra
+            const purchase = {
+                productName: productName,
+                quantity: quantity,
+                totalPrice: (parseFloat(productPrice.replace('$', '')) * parseInt(quantity)).toFixed(2),
+                date: new Date().toLocaleDateString()
+            };
+
+            // Obtener compras recientes del localStorage
+            const purchases = JSON.parse(localStorage.getItem('recentPurchases')) || [];
+
+            // Verificar si el producto ya existe en las compras recientes
+            const existingPurchaseIndex = purchases.findIndex(item => item.productName === productName);
+
+            if (existingPurchaseIndex !== -1) {
+                // Si el producto ya existe, actualizar la cantidad
+                purchases[existingPurchaseIndex].quantity = (parseInt(purchases[existingPurchaseIndex].quantity) + parseInt(quantity)).toString();
+                purchases[existingPurchaseIndex].totalPrice = (parseFloat(purchases[existingPurchaseIndex].totalPrice) + parseFloat(purchase.totalPrice)).toFixed(2);
+            } else {
+                // Si no existe, agregar la nueva compra
+                purchases.push(purchase);
+            }
+
+            // Guardar en localStorage
+            localStorage.setItem('recentPurchases', JSON.stringify(purchases));
+
+            // Redirigir a la página de pago
             alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
+            window.location.href = "../pago.html";
         }
 
         function goBack() {
-            // Si hay historial, intenta regresar
+            // If there's history, try to go back
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                // Si no hay historial, redirige a una página específica (inicio o productos)
-                window.location.href = "../shop.html";  // Ajusta esta ruta según sea necesario
+                // If there's no history, redirect to a specific page (home or products)
+                window.location.href = "../shop.html";  // Adjust this path as needed
             }
         }
 

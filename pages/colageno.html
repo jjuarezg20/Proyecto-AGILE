@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micro Ingredients Multi Collagen Protein Powder, 2 Pounds - Detalles del Producto</title>
+    <title>Micro Ingredients Multi Collagen Protein Powder, 2 Pounds - Product Details</title>
     <link rel="stylesheet" href="../CSS/product_detail.css">
     <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
@@ -19,7 +19,7 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <span id="userDisplay" style="font-weight: bold; display: none; color: white; margin-right: 15px;"></span>
                 <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Login</button>
             </div>
         </div>
@@ -27,63 +27,63 @@
 
     <main>
         <section class="product-details">
-            <!-- Botón Atrás -->
-            <button onclick="goBack()" class="btn-back">Atrás</button>
+            <!-- Back Button -->
+            <button onclick="goBack()" class="btn-back">Back</button>
             <div class="product-info">
-                <img src="../IMG/colageno.jpg" alt="Colágeno en Polvo" class="product-image">
+                <img src="../IMG/colageno.jpg" alt="Collagen Powder" class="product-image">
                 <div class="product-description">
                     <h1>Micro Ingredients Multi Collagen Protein Powder, 2 Pounds</h1>
-                    <p class="item-number">Número de artículo: 789506</p>
-                    <p class="description-text">Suplemento de colágeno multi-origen en polvo de Micro Ingredients, ideal para la salud de la piel, cabello y articulaciones.</p>
+                    <p class="item-number">Item Number: 789506</p>
+                    <p class="description-text">Multi-source collagen powder supplement by Micro Ingredients, ideal for skin, hair, and joint health.</p>
 
                     <div class="membership-prices">
-                        <h3>Precios según membresía:</h3>
+                        <h3>Prices by Membership Level:</h3>
                         <ul>
-                            <li>Precio regular: <span class="price">$30.60</span></li>
-                            <li>Precio con membresía Diamond: <span class="price">$29.00</span></li>
-                            <li>Precio con membresía Platinum: <span class="price">$28.50</span></li>
-                            <li>Precio con membresía Business: <span class="price">$28.00</span></li>
-                            <li>Precio con membresía Business Platinum: <span class="price">$27.50</span></li>
+                            <li>Regular Price: <span class="price">$30.60</span></li>
+                            <li>Diamond Membership Price: <span class="price">$29.00</span></li>
+                            <li>Platinum Membership Price: <span class="price">$28.50</span></li>
+                            <li>Business Membership Price: <span class="price">$28.00</span></li>
+                            <li>Business Platinum Membership Price: <span class="price">$27.50</span></li>
                         </ul>
                     </div>
 
                     <div class="quantity-section">
-                        <label for="quantity">Cantidad:</label>
+                        <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
                     </div>
 
-                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
+                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
     </footer>
 
 
     <script>
         function makePurchase() {
-            alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
+            alert("Redirecting to the payment page...");
+            window.location.href = "../pago.html";  // Adjust path if in root directory
         }
 
         function goBack() {
-            // Si hay historial, intenta regresar
+            // If there's a history, attempt to go back
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                // Si no hay historial, redirige a una página específica (inicio o productos)
-                window.location.href = "../shop.html";  // Ajusta esta ruta según sea necesario
+                // If no history, redirect to a specific page (home or products)
+                window.location.href = "../shop.html";  // Adjust this path as needed
             }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const userData = JSON.parse(localStorage.getItem('userData'));
 
-            if (userData && userData.nombre) {
-                document.getElementById('userDisplay').textContent = userData.nombre;
+            if (userData && userData.name) {
+                document.getElementById('userDisplay').textContent = userData.name;
                 document.getElementById('userDisplay').style.display = 'inline';
                 document.getElementById('loginButton').style.display = 'none';
             }

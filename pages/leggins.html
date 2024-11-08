@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRZ YOGA Butterluxe High Waisted Lounge Legging 25" - Detalles del Producto</title>
+    <title>CRZ YOGA Butterluxe High Waisted Lounge Legging 25" - Product Details</title>
     <link rel="stylesheet" href="../CSS/product_detail.css">
     <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
@@ -27,54 +27,53 @@
 
     <main>
         <section class="product-details">
-            <!-- Botón Atrás -->
-            <button onclick="goBack()" class="btn-back">Atrás</button>
+            <!-- Back Button -->
+            <button onclick="goBack()" class="btn-back">Back</button>
             <div class="product-info">
                 <img src="../IMG/leggins.jpg" alt="CRZ YOGA Butterluxe High Waisted Lounge Legging 25" class="product-image">
                 <div class="product-description">
                     <h1>CRZ YOGA Butterluxe High Waisted Lounge Legging 25"</h1>
-                    <p class="item-number">Número de artículo: 789504</p>
-                    <p class="description-text">Leggings de cintura alta y diseño cómodo de CRZ YOGA, ideales para el yoga y actividades de descanso.</p>
+                    <p class="item-number">Item number: 789504</p>
+                    <p class="description-text">High-waisted leggings with a comfortable design from CRZ YOGA, ideal for yoga and relaxation activities.</p>
 
                     <div class="membership-prices">
-                        <h3>Precios según membresía:</h3>
+                        <h3>Prices by membership:</h3>
                         <ul>
-                            <li>Precio regular: <span class="price">$14.99</span></li>
-                            <li>Precio con membresía Diamond: <span class="price">$14.25</span></li>
-                            <li>Precio con membresía Platinum: <span class="price">$13.99</span></li>
-                            <li>Precio con membresía Business: <span class="price">$13.50</span></li>
-                            <li>Precio con membresía Business Platinum: <span class="price">$13.00</span></li>
+                            <li>Regular price: <span class="price">$14.99</span></li>
+                            <li>Diamond membership price: <span class="price">$14.25</span></li>
+                            <li>Platinum membership price: <span class="price">$13.99</span></li>
+                            <li>Business membership price: <span class="price">$13.50</span></li>
+                            <li>Business Platinum membership price: <span class="price">$13.00</span></li>
                         </ul>
                     </div>
 
                     <div class="quantity-section">
-                        <label for="quantity">Cantidad:</label>
+                        <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
                     </div>
 
-                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
+                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 My Store. All rights reserved.</p>
     </footer>
 
     <script>
         function makePurchase() {
-            alert("Redirigiendo a la página de pago...");
-            window.location.href = "../pago.html";  // Ajusta la ruta según la ubicación del archivo
-            window.location.href = "..//pago.html";
+            alert("Redirecting to the payment page...");
+            window.location.href = "../pago.html";  // Adjust the path as needed
         }
 
         function goBack() {
-            // Intenta regresar en el historial, si no hay historial redirige a la página principal
+            // Try to go back in history, if there's no history, redirect to the main page
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+                window.location.href = "../index.html";  // Adjust this path as needed
             }
         }
 
