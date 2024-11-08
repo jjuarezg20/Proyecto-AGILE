@@ -6,6 +6,40 @@
     <title>Tienda - Shop</title>
     <link rel="stylesheet" href="CSS/shop.css">
     <link rel="stylesheet" href="CSS/nav_bar.css">
+
+    <style>
+        .membership-notification {
+    padding: 15px 20px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+}
+
+.membership-notification a {
+    color: white;
+    text-decoration: underline;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.membership-notification a:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -37,7 +71,11 @@
             </ul>
         </nav>
 </header>
-
+    <!-- Añadir esta notificación justo después del header -->
+    <div id="membershipNotification" class="membership-notification">
+        <!-- El contenido se llenará dinámicamente con JavaScript -->
+    </div>
+    
     <main>
         <!-- Banner principal -->
         <section class="banner">
@@ -161,8 +199,65 @@
             document.getElementById('userDisplay').textContent = userData.nombre;
             document.getElementById('userDisplay').style.display = 'inline';
             document.getElementById('loginButton').style.display = 'none';
+
+            // Mostrar notificación de membresía
+            mostrarNotificacionMembresia(userData);
         }
     });
+
+    function mostrarNotificacionMembresia(userData) {
+        // Convertir la fecha de expiración a objeto Date
+        const partesFecha = userData.fechaExpiracion.split('/');
+        const fechaExpiracionObj = new Date(
+            parseInt(partesFecha[2]),  // año
+            parseInt(partesFecha[1]) - 1,  // mes (0-indexed)
+            parseInt(partesFecha[0])  // día
+        );
+
+        // Obtener la fecha actual
+        const fechaActual = new Date();
+
+        // Calcular la diferencia en milisegundos
+        const diferenciaTiempo = fechaExpiracionObj.getTime() - fechaActual.getTime();
+
+        // Convertir a días
+        const diasRestantes = Math.ceil(diferenciaTiempo / (1000 * 3600 * 24));
+
+        // Obtener el elemento de notificación
+        const notificacion = document.getElementById('membershipNotification');
+        
+        // Mostrar notificación
+        notificacion.style.display = 'block';
+
+        // Personalizar mensaje según el tipo de membresía y días restantes
+        let mensajeNotificacion = `Your ${userData.membresia} Membership is active. `;
+
+        if (diasRestantes > 0) {
+            mensajeNotificacion += `${diasRestantes} days remaining. `;
+        } else {
+            mensajeNotificacion += `Membership has expired. `;
+        }
+
+        mensajeNotificacion += `Renew for the best prices and benefits!`;
+
+        // Establecer el texto de la notificación
+        notificacion.innerHTML = `
+            ${mensajeNotificacion} 
+            <a href="paginaPersonal.html" style="color: white; text-decoration: underline; margin-left: 10px;">Renew Now</a>
+        `;
+
+        // Establecer estilos según la proximidad de la expiración
+        if (diasRestantes <= 15) {
+            notificacion.style.backgroundColor = '#E74C3C';  // Rojo intenso para urgente
+            notificacion.style.color = 'white';
+        } else if (diasRestantes <= 30) {
+            notificacion.style.backgroundColor = '#F39C12';  // Naranja para próximo a expirar
+            notificacion.style.color = 'white';
+        } else {
+            notificacion.style.backgroundColor = '#2980B9';  // Azul para membresía vigente
+            notificacion.style.color = 'white';
+        }
+    }
     </script>
 </body>
 </html>

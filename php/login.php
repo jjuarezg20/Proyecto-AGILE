@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si se encontró el usuario
     if ($result->num_rows > 0) {
         // Inicio de sesión exitoso
-        echo "<script>alert('Inicio de sesión exitoso'); window.location.href = '../index.html';</script>";
+        echo "<script>alert('Inicio de sesión exitoso'); window.location.href = '../shop.html';</script>";
     } else {
         // Credenciales incorrectas
         echo "<script>alert('Correo o contraseña incorrectos'); window.location.href = '../Login.html';</script>";

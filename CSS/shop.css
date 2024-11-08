@@ -5,6 +5,8 @@
     font-weight: bold;
     color: var(--primary-color);
 }
+
+
 /* Estilos para el banner */
 .banner {
     display: flex;

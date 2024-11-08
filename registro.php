@@ -1,3 +1,80 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "membershipdatabase";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Datos de usuario
+    $nombre = $_POST['nombre'];
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena']; // Encriptar contraseña
+    $telefono = $_POST['telefono'];
+
+    // Insertar en tabla Cliente
+    $sql_cliente = "INSERT INTO cliente (nombre, correo, contrasena, telefono) VALUES (?, ?, ?, ?)";
+    $stmt_cliente = $conn->prepare($sql_cliente);
+    $stmt_cliente->bind_param("ssss", $nombre, $correo, $contrasena, $telefono);
+
+    if ($stmt_cliente->execute()) {
+        // Si el registro de cliente fue exitoso, insertar datos de pago
+        $numero_tarjeta = $_POST['cardNumber'];
+        $nombre_tarjeta = $_POST['cardName'];
+        $expiracion_tarjeta = $_POST['expirationDate'];
+        $codigo_seguridad = $_POST['securityCode'];
+
+        // Insertar en tabla registro_pago
+        $sql_pago = "INSERT INTO registro_pago (numero_tarjeta, nombre_tarjeta, expiration_date, security_code) VALUES (?, ?, ?, ?)";
+        $stmt_pago = $conn->prepare($sql_pago);
+        $stmt_pago->bind_param("ssss", $numero_tarjeta, $nombre_tarjeta, $expiracion_tarjeta, $codigo_seguridad);
+
+        if ($stmt_pago->execute()) {
+            // Capturar todos los datos del formulario
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['lastName'];
+            $correo = $_POST['correo']; // Asegúrate de que este nombre coincida con el atributo name del input
+            $telefono = $_POST['telefono'];
+            $idNumber = $_POST['idNumber'];
+            $membresia = $_POST['club'];
+        
+            echo "<script>
+                const userData = {
+                    nombre: '$nombre',
+                    apellido: '$apellido',
+                    email: '$correo', // Usa 'email' en lugar de 'correo'
+                    telefono: '$telefono',
+                    id: '$idNumber',
+                    membresia: '$membresia'
+                };
+                localStorage.setItem('userData', JSON.stringify(userData));
+                window.location.href = 'paginaPersonal.html';
+            </script>";
+            exit(); // Asegura que el script se detenga después de la redirección
+        } else {
+            echo "Error en el registro de pago: " . $stmt_pago->error;
+            die();
+        }
+        
+        $stmt_pago->close();
+    } else {
+        echo "Error en el registro de cliente: " . $stmt_cliente->error;
+        die();
+    }
+
+    $stmt_cliente->close();
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,28 +118,28 @@
         <p>Please fill out the main member's information to start enjoying our exclusive club benefits.</p>
         <p>If you had a Membership before, you can <a href="#">renew your membership here</a></p>
     
-        <form class="membership-form" id="combinedForm">
+        <form class="membership-form" id="combinedForm" method="POST">
             <h3>Membership Information</h3>
             
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName">* Name</label>
-                    <input type="text" id="firstName" required>
+                    <input type="text" id="firstName" required name="nombre">
                 </div>
                 <div class="form-group">
                     <label for="lastName">* Last Name</label>
-                    <input type="text" id="lastName" required>
+                    <input type="text" id="lastName" required name="lastName">
                 </div>
             </div>
     
             <div class="form-row">
                 <div class="form-group">
                     <label for="country">* Country</label>
-                    <input type="text" id="country" value="El Salvador" disabled>
+                    <input type="text" id="country" value="El Salvador" disabled >
                 </div>
                 <div class="form-group">
                     <label for="club">* Preferred Membership</label>
-                    <select id="club">
+                    <select id="club" name="club">
                         <option value="Diamond">Diamond</option>
                         <option value="Platinum">Platinum</option>
                         <option value="Business">Business</option>
@@ -74,27 +151,27 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="email">* Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" required name="correo">
                 </div>
             </div>
     
             <div class="form-row">
                 <div class="form-group">
                     <label for="password">* Create Password</label>
-                    <input type="password" id="password" required>
+                    <input type="password" id="password" required name="contrasena">
                 </div>
             </div>
     
             <div class="form-row">
                 <div class="form-group">
                     <label for="idNumber">* Government ID Number</label>
-                    <input type="text" id="idNumber" required maxlength="9">
+                    <input type="text" id="idNumber" required maxlength="9" name="idNumber">
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">* Phone Number</label>
                     <div class="phone-input">
                         <span class="flag-icon">🇸🇻</span>
-                        <input type="text" id="phoneNumber" placeholder="Phone Number" required maxlength="8">
+                        <input type="text" id="phoneNumber" placeholder="Phone Number" required maxlength="8" name="telefono">
                     </div>
                 </div>
             </div>
@@ -104,22 +181,22 @@
 
             <div class="form-group">
                 <label for="cardNumber">Card number</label>
-                <input type="text" id="cardNumber" placeholder="Card number" required>
+                <input type="text" id="cardNumber" placeholder="Card number" required name="cardNumber">
             </div>
 
             <div class="form-group">
                 <label for="cardName">Name on card</label>
-                <input type="text" id="cardName" placeholder="Name on card" required>
+                <input type="text" id="cardName" placeholder="Name on card" required name="cardName">
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="expirationDate">Expiration Date</label>
-                    <input type="text" id="expirationDate" placeholder="MM / YY" required>
+                    <input type="text" id="expirationDate" placeholder="MM / YY" required name="expirationDate">
                 </div>
                 <div class="form-group">
                     <label for="securityCode">Security Code (CVV/CVC)</label>
-                    <input type="text" id="securityCode" placeholder="CVV/CVC" required>
+                    <input type="text" id="securityCode" placeholder="CVV/CVC" required name="securityCode">
                 </div>
             </div>
 
@@ -127,70 +204,9 @@
         </form>
     </section>
 
-    <script>
+<script>
 
-document.getElementById('submitBtn').addEventListener('click', function(event) {
-        event.preventDefault(); 
-        
-        // Obtener todos los valores
-        const userData = {
-            nombre: document.getElementById('firstName').value,
-            apellido: document.getElementById('lastName').value,
-            email: document.getElementById('email').value,
-            telefono: document.getElementById('phoneNumber').value,
-            id: document.getElementById('idNumber').value,
-            membresia: document.getElementById('club').value // Añadimos la membresía
-        };
-        
-        // Guardar todos los datos en localStorage
-        localStorage.setItem('userData', JSON.stringify(userData));
-        
-        alert('Usuario creado exitosamente');
-        window.location.href = 'paginaPersonal.html';
 
-        });
-        
-document.getElementById("combinedForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Capturar datos de usuario
-    const nombre = document.getElementById("firstName").value;
-    const apellido = document.getElementById("lastName").value; // Si quieres usarlo
-    const correo = document.getElementById("email").value;
-    const contrasena = document.getElementById("password").value;
-    const telefono = document.getElementById("phoneNumber").value;
-
-    // Capturar datos de la tarjeta
-    const numero_tarjeta = document.getElementById("cardNumber").value;
-    const nombre_tarjeta = document.getElementById("cardName").value;
-    const expiracion_tarjeta = document.getElementById("expirationDate").value;
-    const codigo_seguridad = document.getElementById("securityCode").value;
-
-    // Crear formulario invisible
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = "./php/registro.php";
-
-    // Añadir campos
-    const fields = {
-        nombre, correo, contrasena, telefono, 
-        cardNumber: numero_tarjeta, 
-        cardName: nombre_tarjeta, 
-        expirationDate: expiracion_tarjeta, 
-        securityCode: codigo_seguridad
-    };
-    
-    for (const key in fields) {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = fields[key];
-        form.appendChild(input);
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-});
 </script>
 
 </body>

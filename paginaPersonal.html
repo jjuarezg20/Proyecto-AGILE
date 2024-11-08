@@ -7,7 +7,6 @@
     <link rel="stylesheet" href=".//CSS/nav_bar.css">
     <link rel="stylesheet" href=".//CSS/pagina_personal.css">
     <link rel="stylesheet" href="CSS/form_renovar.css">
-    <link href="php/renovarMembresia.php">
 </head>
 <body>
     <header>
@@ -137,15 +136,33 @@
 
 
 <script>
-
-        function generarNumeroMembresia() {
-        let numero = '';
-        for (let i = 0; i < 10; i++) {
-            numero += Math.floor(Math.random() * 10);
+    function generarNumeroMembresia(email) {
+        // Crear un hash simple del correo electrónico
+        let hash = 0;
+        for (let i = 0; i < email.length; i++) {
+            const char = email.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convertir a 32 bits
         }
-        return numero;
+
+        // Convertir el hash a un número de 10 dígitos
+        const numeroHash = Math.abs(hash).toString();
+        
+        // Asegurar que sea exactamente 10 dígitos
+        const numeroMembresia = (numeroHash + '0000000000').slice(0, 10);
+
+        return numeroMembresia;
     }
 
+    function generarFechaExpiracion() {
+        const hoy = new Date();
+        const unAnioDespues = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate());
+
+        // Formatear la fecha como dd/mm/yyyy
+        const fechaFormateada = `${unAnioDespues.getDate().toString().padStart(2, '0')}/${(unAnioDespues.getMonth() + 1).toString().padStart(2, '0')}/${unAnioDespues.getFullYear()}`;
+
+        return fechaFormateada;
+    }
 
     document.addEventListener('DOMContentLoaded', function() {
         // Obtener todos los datos guardados
@@ -158,36 +175,85 @@
         } 
         
         if (userData) {
+            // Generar y guardar fecha de expiración en localStorage
+            const fechaExpiracion = generarFechaExpiracion();
+            
+            // Generar número de membresía basado en el correo electrónico
+            const numeroMembresia = generarNumeroMembresia(userData.email);
+
+            // Actualizar el objeto userData con la fecha de expiración y número de membresía
+            userData.fechaExpiracion = fechaExpiracion;
+            userData.numeroMembresia = numeroMembresia;
+
+            // Guardar los datos actualizados en localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Mostrar datos en la página
             document.getElementById('nombreMostrado').textContent = userData.nombre;
             document.getElementById('apellidoMostrado').textContent = userData.apellido;
             document.getElementById('emailMostrado').textContent = userData.email;
             document.getElementById('idMostrado').textContent = userData.id;
             document.getElementById('telMostrado').textContent = userData.telefono;
-            // ... actualizar otros campos ...
             document.getElementById('tipoMembresiaMostrada').textContent = userData.membresia;
 
-            // Generar y mostrar el número de membresía
-            const numeroMembresia = generarNumeroMembresia();
+            // Mostrar número de membresía
             document.getElementById('numeroMembresia').textContent = numeroMembresia;
 
-            // Generar fecha de expiración aleatoria
-            const hoy = new Date();
-            const unMesDespues = new Date(hoy.getFullYear(), hoy.getMonth() + 1, hoy.getDate());
-            const unAnioDespues = new Date(hoy.getFullYear() + 1, hoy.getMonth(), hoy.getDate());
-            const tiempoAleatorio = unMesDespues.getTime() + Math.random() * (unAnioDespues.getTime() - unMesDespues.getTime());
-            const fechaExpiracion = new Date(tiempoAleatorio);
-
-            // Formatear la fecha como dd/mm/yyyy
-            const fechaFormateada = `${fechaExpiracion.getDate().toString().padStart(2, '0')}/${(fechaExpiracion.getMonth() + 1).toString().padStart(2, '0')}/${fechaExpiracion.getFullYear()}`;
-
-            document.querySelector('.expiracion').textContent = fechaFormateada;
+            // Mostrar fecha de expiración
+            document.querySelector('.expiracion').textContent = fechaExpiracion;
         }
 
         // Mostrar el modal al hacer clic en "RENOVAR"
         document.querySelector('.renovar').addEventListener('click', function() {
             document.getElementById('renewModal').style.display = 'flex';
         });
-    
+
+        // Manejar el submit del formulario de renovación
+        document.querySelector('#renewModal form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener datos actuales del usuario
+            const userData = JSON.parse(localStorage.getItem('userData')) || {};
+            
+            // Convertir la fecha de expiración actual a un objeto Date
+            const partesFecha = userData.fechaExpiracion.split('/');
+            const fechaExpiracion = new Date(
+                parseInt(partesFecha[2]),  // año
+                parseInt(partesFecha[1]) - 1,  // mes (0-indexed)
+                parseInt(partesFecha[0])  // día
+            );
+
+            // Añadir 6 meses a la fecha de expiración
+            const nuevaFechaExpiracion = new Date(
+                fechaExpiracion.getFullYear(), 
+                fechaExpiracion.getMonth() + 6, 
+                fechaExpiracion.getDate()
+            );
+
+            // Formatear la nueva fecha
+            const nuevaFechaFormateada = `${nuevaFechaExpiracion.getDate().toString().padStart(2, '0')}/${(nuevaFechaExpiracion.getMonth() + 1).toString().padStart(2, '0')}/${nuevaFechaExpiracion.getFullYear()}`;
+
+            // Actualizar fecha de expiración en userData
+            userData.fechaExpiracion = nuevaFechaFormateada;
+
+            // Guardar en localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Mostrar la nueva fecha de expiración
+            const expiracionElement = document.querySelector('.expiracion');
+            expiracionElement.textContent = nuevaFechaFormateada;
+            
+            // Estilizar el elemento de fecha
+            expiracionElement.style.color = 'blue';
+            expiracionElement.style.fontWeight = 'bold';
+
+            // Mostrar mensaje de renovación
+            alert('¡Membresía renovada exitosamente por 6 meses adicionales!');
+
+            // Cerrar el modal
+            document.getElementById('renewModal').style.display = 'none';
+        });
+
         // Cerrar el modal al hacer clic en la "X"
         document.getElementById('closeModal').addEventListener('click', function() {
             document.getElementById('renewModal').style.display = 'none';

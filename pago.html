@@ -6,7 +6,6 @@
     <title>Página de Pago</title>
     <link rel="stylesheet" href="CSS/payment.css">
     <link rel="stylesheet" href="CSS/nav_bar.css">
-    <link rel="stylesheet" href="CSS/pago.css">
 </head>
 <body>
     <header>
@@ -100,7 +99,6 @@
             const totalPrice = document.getElementById("product-price").textContent;
 
             // Obtener los datos de envío
-            const fullName = document.getElementById("full-name").value;
             const address = document.getElementById("address").value;
             const city = document.getElementById("city").value;
             const postalCode = document.getElementById("postal-code").value;
@@ -113,7 +111,6 @@
                 totalPrice: totalPrice,
                 date: new Date().toLocaleDateString(),
                 shippingInfo: {
-                    fullName: fullName,
                     address: address,
                     city: city,
                     postalCode: postalCode,
