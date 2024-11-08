@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juguete de Peluche para Perros - Detalles del Producto</title>
-    <link rel="stylesheet" href="..//CSS/product_detail.css">
-    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+    <link rel="stylesheet" href="../CSS/product_detail.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
@@ -20,18 +19,18 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
-                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Login</button>
             </div>
-            
         </div>
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+            <!-- Botón Atrás -->
+            <button onclick="goBack()" class="btn-back">Atrás</button>
             <div class="product-info">
-                <img src="..//IMG/juguete para perro.png" alt="Juguete de Peluche para Perros" class="product-image">
+                <img src="../IMG/juguete para perro.png" alt="Juguete de Peluche para Perros" class="product-image">
                 <div class="product-description">
                     <h1>Juguete de Peluche para Perros</h1>
                     <p class="item-number">Número de artículo: 789403</p>
@@ -66,6 +65,16 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";  // Ajusta la ruta según la ubicación del archivo
+        }
+
+        function goBack() {
+            // Intenta regresar en el historial, si no hay historial redirige a la página principal
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+            }
             window.location.href = "..//pago.html";
         }
         
@@ -79,7 +88,16 @@
             document.getElementById('userDisplay').style.display = 'inline';
             document.getElementById('loginButton').style.display = 'none';
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

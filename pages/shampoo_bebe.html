@@ -66,6 +66,15 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html"; // Ajuste de ruta directo a "pago.html" en la raíz del proyecto
+        }
+
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html"; // Ruta ajustada para la página de inicio
+            }
             window.location.href = "..//pago.html";
         }
         
@@ -79,7 +88,16 @@
             document.getElementById('userDisplay').style.display = 'inline';
             document.getElementById('loginButton').style.display = 'none';
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

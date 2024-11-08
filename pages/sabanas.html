@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Sábanas Queen Size - Detalles del Producto</title>
-    <link rel="stylesheet" href="CSS/product_detail.css">
-    <link rel="stylesheet" href="CSS/nav_bar.css">
+    <link rel="stylesheet" href="../CSS/product_detail.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <!-- Top navigation bar -->
+        <!-- Barra de navegación superior -->
         <div class="top-nav">
             <div class="left">
-                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search for Products, brands and more...">
+                <input type="text" placeholder="Buscar productos, marcas y más...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="right">
-                <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
-                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+                <span class="account"><i class="fa fa-user"></i> Cuenta:</span>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Iniciar sesión</button>
             </div>
-            
         </div>
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="btn-back">Atrás</button>
+            <button onclick="goBack()" class="btn-back">Atrás</button>
             <div class="product-info">
-                <img src="IMG/Sabanas1.png" alt="Juego de Sábanas Queen Size" class="product-image">
+                <img src="../IMG/Sabanas1.png" alt="Juego de Sábanas Queen Size" class="product-image">
                 <div class="product-description">
                     <h1>Juego de Sábanas Queen Size</h1>
                     <p class="item-number">Número de artículo: 123456</p>
@@ -66,6 +65,15 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";
+        }
+
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html";
+            }
             window.location.href = "..//pago.html";
         }
         
@@ -79,7 +87,16 @@
             document.getElementById('userDisplay').style.display = 'inline';
             document.getElementById('loginButton').style.display = 'none';
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

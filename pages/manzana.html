@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manzana Gala Fresca 12 Unidades - Detalles del Producto</title>
-    <link rel="stylesheet" href="..//CSS/product_detail.css">
-    <link rel="stylesheet" href="..//CSS/nav_bar.css">
+    <link rel="stylesheet" href="../CSS/product_detail.css">
+    <link rel="stylesheet" href="../CSS/nav_bar.css">
 </head>
 <body>
     <header>
-        <!-- Top navigation bar -->
         <div class="top-nav">
             <div class="left">
-                <img src="..//IMG/logo.jpg" alt="Logo" class="logo">
+                <img src="../IMG/logo.jpg" alt="Logo" class="logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for Products, brands and more...">
@@ -20,68 +19,74 @@
             </div>
             <div class="right">
                 <span class="account"><i class="fa fa-user"></i> Account:</span>
-                <span id="userDisplay" style="font-weight: bolder;   display: none; color: white; margin-right: 15px;"></span>
-                <button id="loginButton" class="login-btn" onclick="window.location.href='Login.html'">Login</button>
+                <span id="userDisplay" style="font-weight: bolder; display: none; color: white; margin-right: 15px;"></span>
+                <button id="loginButton" class="login-btn" onclick="window.location.href='../pages/Login.html'">Login</button>
             </div>
-            
         </div>
-
     </header>
 
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="btn-back">Back</button>
+            <button onclick="goBack()" class="btn-back">Atrás</button>
             <div class="product-info">
-                <img src="..//IMG/Manzana.png" alt="Fresh Gala Apple" class="product-image">
+                <img src="../IMG/Manzana.png" alt="Fresh Gala Apple" class="product-image">
                 <div class="product-description">
-                    <h1>Fresh Gala Apple 12 Units</h1>
-                    <p class="item-number">Item Number: 789101</p>
-                    <p class="description-text">High-quality fresh Gala apples, perfect for snacks and healthy recipes.</p>
-    
+                    <h1>Manzana Gala Fresca 12 Unidades</h1>
+                    <p class="item-number">Número de artículo: 789101</p>
+                    <p class="description-text">Manzanas Gala frescas y de alta calidad, perfectas para snacks y recetas saludables.</p>
+
                     <div class="membership-prices">
-                        <h3>Prices by Membership:</h3>
+                        <h3>Precios según membresía:</h3>
                         <ul>
-                            <li>Regular Price: <span class="price">$3.99</span></li>
-                            <li>Diamond Membership Price: <span class="price">$3.79</span></li>
-                            <li>Platinum Membership Price: <span class="price">$3.69</span></li>
-                            <li>Business Membership Price: <span class="price">$3.60</span></li>
-                            <li>Business Platinum Membership Price: <span class="price">$3.55</span></li>
+                            <li>Precio regular: <span class="price">$3.99</span></li>
+                            <li>Precio con membresía Diamond: <span class="price">$3.79</span></li>
+                            <li>Precio con membresía Platinum: <span class="price">$3.69</span></li>
+                            <li>Precio con membresía Business: <span class="price">$3.60</span></li>
+                            <li>Precio con membresía Business Platinum: <span class="price">$3.55</span></li>
                         </ul>
                     </div>
-    
+
                     <div class="quantity-section">
-                        <label for="quantity">Quantity:</label>
+                        <label for="quantity">Cantidad:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" class="quantity-input">
                     </div>
-    
-                    <button class="btn-make-purchase" onclick="makePurchase()">Make Purchase</button>
+
+                    <button class="btn-make-purchase" onclick="makePurchase()">Hacer compra</button>
                 </div>
             </div>
         </section>
     </main>
     
     <footer class="footer">
-        <p>&copy; 2024 Member's Club. All rights reserved.</p>
+        <p>&copy; 2024 Member's Club. Todos los derechos reservados.</p>
     </footer>
-    
 
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";
+        }
+
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = "../index.html";
+            }
+        }
+
             window.location.href = "..//pago.html";
         }
         
         document.addEventListener('DOMContentLoaded', function() {
-        // Obtener los datos del usuario del localStorage
-        const userData = JSON.parse(localStorage.getItem('userData'));
-        
-        if (userData && userData.nombre) {
-            // Si hay un usuario logueado, mostrar su nombre y ocultar el botón de login
-            document.getElementById('userDisplay').textContent = userData.nombre;
-            document.getElementById('userDisplay').style.display = 'inline';
-            document.getElementById('loginButton').style.display = 'none';
-        }
-    });
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>

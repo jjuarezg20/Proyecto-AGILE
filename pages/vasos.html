@@ -67,6 +67,17 @@
     <script>
         function makePurchase() {
             alert("Redirigiendo a la página de pago...");
+            window.location.href = "../pago.html";  // Ajusta si está en la carpeta raíz
+        }
+
+        function goBack() {
+            // Si hay historial, intenta regresar
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // Si no hay historial, redirige a una página específica (inicio o productos)
+                window.location.href = "../index.html";  // Ajusta esta ruta según sea necesario
+            }
             window.location.href = "..//pago.html";
         }
         
@@ -80,7 +91,16 @@
             document.getElementById('userDisplay').style.display = 'inline';
             document.getElementById('loginButton').style.display = 'none';
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.nombre) {
+                document.getElementById('userDisplay').textContent = userData.nombre;
+                document.getElementById('userDisplay').style.display = 'inline';
+                document.getElementById('loginButton').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
